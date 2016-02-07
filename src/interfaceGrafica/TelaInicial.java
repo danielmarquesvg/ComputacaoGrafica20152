@@ -1,15 +1,14 @@
 package interfaceGrafica;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+
 
 public class TelaInicial extends JFrame {
 
-	private JPanel contentPane;
+	public static JPanel contentPane;
+	PanelInicial panelInicial = new PanelInicial();
 
 	/**
 	 * Launch the application.
@@ -32,11 +31,14 @@ public class TelaInicial extends JFrame {
 	 */
 	public TelaInicial() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(0, 0, 1024, 720);
+		
 		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		panelInicial.setBounds(0, 0, 1024, 682);
+		contentPane.add(panelInicial);
+		setVisible(true);
 	}
 
 }
