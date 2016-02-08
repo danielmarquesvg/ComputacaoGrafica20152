@@ -3,6 +3,7 @@ package interfaceGrafica;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollBar;
 
 
 public class TelaInicial extends JFrame {
@@ -40,5 +41,4 @@ public class TelaInicial extends JFrame {
 		contentPane.add(panelInicial);
 		setVisible(true);
 	}
-
 }
