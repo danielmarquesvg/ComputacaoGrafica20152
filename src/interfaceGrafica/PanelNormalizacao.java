@@ -60,6 +60,7 @@ public class PanelNormalizacao extends JPanel {
 		painelBuffer.setLocation(30, 50);
 		
 		painelBuffer.limparTela();
+		painelBuffer.desenharRetasPlano();
 		
 		//a partir daqui esta as alteraçoes da RETA by @Kawe
 				
@@ -203,6 +204,7 @@ public class PanelNormalizacao extends JPanel {
 			public void actionPerformed(ActionEvent e) {	
 				
 				painelBuffer.limparTela();
+				painelBuffer.desenharRetasPlano();
 				textFieldX1.setText("");
 				textFieldY1.setText("");
 				//textFieldX2.setText("");

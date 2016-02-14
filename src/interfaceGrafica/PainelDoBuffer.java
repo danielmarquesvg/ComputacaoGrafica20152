@@ -21,13 +21,12 @@ public class PainelDoBuffer extends JPanel {
 		
 		setBounds(new Rectangle(0, 0, 600, 600));
 		setBorder(new LineBorder(new Color(0, 0, 0)));
-	
-		//Pintar pixel
-		limparTela();
+
+		//limparTela();
+		//repaint();
+		//desenharRetasPlano();
 		repaint();
-		
-		//buffer.setRGB(500, 100, Color.WHITE.getRGB() );
-		//buffer.setRGB(50, 50, Color.BLACK.getRGB() );
+	
 	}
 	 
 	//Coloca o buffer no painel
@@ -55,6 +54,24 @@ public class PainelDoBuffer extends JPanel {
 		
 	}
 	
+	//Desenha as retas do plano cartesiano
+	public void desenharRetasPlano(){
+		//System.out.println("OI");
+		
+		for (int x = 0; x < 600; x++) {
+			
+			buffer.setRGB(x,300,Color.BLACK.getRGB());
+		}
+			
+		for (int y = 0; y < 600; y++) {
+				
+			buffer.setRGB(300, y,Color.BLACK.getRGB());
+		}
+		
+		//repaint();
+		
+	}
+	
 	//Plota um pixel pela entrada do usuário
 	
 	public void plotarPixel(){
@@ -65,7 +82,7 @@ public class PainelDoBuffer extends JPanel {
 			repaint();
 		
 		}catch(Exception e){
-			JOptionPane.showMessageDialog(null, "Digite um número válido: X: 0 a 550 e Y: 0 a 500");
+			JOptionPane.showMessageDialog(null, "Digite um número válido: X: 0 a 600 e Y: 0 a 600");
 		}
 		
 	}

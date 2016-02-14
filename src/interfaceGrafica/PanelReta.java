@@ -56,6 +56,7 @@ public class PanelReta extends JPanel {
 		painelBuffer.setLocation(30, 50);
 		
 		painelBuffer.limparTela();
+		painelBuffer.desenharRetasPlano();
 		
 		//a partir daqui esta as alteraçoes da RETA by @Kawe
 				
@@ -189,6 +190,7 @@ public class PanelReta extends JPanel {
 					public void actionPerformed(ActionEvent e) {	
 						
 						painelBuffer.limparTela();
+						painelBuffer.desenharRetasPlano();
 						textFieldX1.setText("");
 						textFieldY1.setText("");
 						textFieldX2.setText("");
@@ -257,10 +259,13 @@ public class PanelReta extends JPanel {
 					
 					public void actionPerformed(ActionEvent arg0) {
 					
-					
-						painelBuffer.plotarRetaDDA(Integer.parseInt(textFieldX1.getText()), Integer.parseInt(textFieldY1.getText()), Integer.parseInt(textFieldX2.getText()), Integer.parseInt(textFieldY2.getText()));
-						//painelBuffer.repaint();
-						
+						try{
+							painelBuffer.plotarRetaDDA(Integer.parseInt(textFieldX1.getText()), Integer.parseInt(textFieldY1.getText()), Integer.parseInt(textFieldX2.getText()), Integer.parseInt(textFieldY2.getText()));
+							//painelBuffer.desenharRetasPlano();
+							//painelBuffer.repaint();
+						}catch(Exception e){
+							JOptionPane.showMessageDialog(null, "Ocorreu um erro!");
+						}
 					}
 					
 					
