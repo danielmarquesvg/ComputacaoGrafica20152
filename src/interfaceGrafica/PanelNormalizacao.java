@@ -24,8 +24,8 @@ public class PanelNormalizacao extends JPanel {
 	PainelDoBuffer painelBuffer = new PainelDoBuffer();
 	private JTextField textFieldX1;
 	private JTextField textFieldY1;
-	private JTextField textFieldX2;
-	private JTextField textFieldY2;
+	//private JTextField textFieldX2;
+	//private JTextField textFieldY2;
 	
 	/**
 	 * Create the panel.
@@ -205,8 +205,8 @@ public class PanelNormalizacao extends JPanel {
 				painelBuffer.limparTela();
 				textFieldX1.setText("");
 				textFieldY1.setText("");
-				textFieldX2.setText("");
-				textFieldY2.setText("");
+				//textFieldX2.setText("");
+				//textFieldY2.setText("");
 				
 				label1.setText("");
 				label2.setText("");
@@ -260,7 +260,7 @@ public class PanelNormalizacao extends JPanel {
 			}
 		});
 		
-		//Plota quando clica
+		//Metodo que plota um pixel quando clica no buffer
 		
 				botaoMouse.addItemListener(new ItemListener() {
 					public void itemStateChanged(ItemEvent arg0) {
