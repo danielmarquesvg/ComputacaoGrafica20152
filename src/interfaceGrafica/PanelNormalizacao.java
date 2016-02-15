@@ -65,21 +65,21 @@ public class PanelNormalizacao extends JPanel {
 		//a partir daqui esta as alteraçoes da RETA by @Kawe
 				
 		
-		JLabel label1 = new JLabel("0");
-		label1.setBounds(750, 50, 72, 43);
-		add(label1);
+		JLabel labelResulNDCX = new JLabel("0");
+		labelResulNDCX.setBounds(750, 50, 72, 43);
+		add(labelResulNDCX);
 		
-		JLabel label2 = new JLabel("0");
-		label2.setBounds(750, 106, 72, 49);
-		add(label2);
+		JLabel labelResulNDCY = new JLabel("0");
+		labelResulNDCY.setBounds(750, 106, 72, 49);
+		add(labelResulNDCY);
 		
-		JLabel label3 = new JLabel("0");
-		label3.setBounds(750, 166, 72, 49);
-		add(label3);
+		JLabel labelResulDCX = new JLabel("0");
+		labelResulDCX.setBounds(750, 166, 72, 49);
+		add(labelResulDCX);
 		
-		JLabel label4 = new JLabel("0");
-		label4.setBounds(750, 226, 72, 49);
-		add(label4);
+		JLabel labelResulDCY = new JLabel("0");
+		labelResulDCY.setBounds(750, 226, 72, 49);
+		add(labelResulDCY);
 		
 		textFieldX1 = new JTextField();
 		textFieldX1.setBounds(670, 388, 72, 20);
@@ -118,15 +118,15 @@ public class PanelNormalizacao extends JPanel {
 		labelY.setBounds(100, 650, 34, 28);
 		add(labelY);
 		
-		JLabel lblNewLabel = new JLabel("X1:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(640, 391, 25, 14);
-		add(lblNewLabel);
+		JLabel labelX1 = new JLabel("X1:");
+		labelX1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		labelX1.setBounds(640, 391, 25, 14);
+		add(labelX1);
 		
-		JLabel lblY = new JLabel("Y1:");
-		lblY.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblY.setBounds(640, 422, 25, 14);
-		add(lblY);
+		JLabel labelY1 = new JLabel("Y1:");
+		labelY1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		labelY1.setBounds(640, 422, 25, 14);
+		add(labelY1);
 		
 		
 		/*
@@ -142,21 +142,21 @@ public class PanelNormalizacao extends JPanel {
 		*/
 		
 		
-		JLabel lblNewLabel_1 = new JLabel("NDCX:");
-		lblNewLabel_1.setBounds(700, 63, 46, 14);
-		add(lblNewLabel_1);
+		JLabel labelNDCX = new JLabel("NDCX:");
+		labelNDCX.setBounds(700, 63, 46, 14);
+		add(labelNDCX);
 		
-		JLabel lblNdcy = new JLabel("NDCY:");
-		lblNdcy.setBounds(700, 123, 46, 14);
-		add(lblNdcy);
+		JLabel labelNDCY = new JLabel("NDCY:");
+		labelNDCY.setBounds(700, 123, 46, 14);
+		add(labelNDCY);
 		
-		JLabel lblDcy = new JLabel("DCX:");
-		lblDcy.setBounds(700, 183, 46, 14);
-		add(lblDcy);
+		JLabel labelDCX = new JLabel("DCX:");
+		labelDCX.setBounds(700, 183, 46, 14);
+		add(labelDCX);
 		
-		JLabel lblDcy_1 = new JLabel("DCY:");
-		lblDcy_1.setBounds(700, 243, 46, 14);
-		add(lblDcy_1);
+		JLabel labelDCY = new JLabel("DCY:");
+		labelDCY.setBounds(700, 243, 46, 14);
+		add(labelDCY);
 		
 		
 
@@ -210,10 +210,10 @@ public class PanelNormalizacao extends JPanel {
 				//textFieldX2.setText("");
 				//textFieldY2.setText("");
 				
-				label1.setText("");
-				label2.setText("");
-				label3.setText("");
-				label4.setText("");
+				labelResulNDCX.setText("");
+				labelResulNDCY.setText("");
+				labelResulDCX.setText("");
+				labelResulDCY.setText("");
 					
 			}
 		});
@@ -230,11 +230,11 @@ public class PanelNormalizacao extends JPanel {
 				
 				DecimalFormat oi = new DecimalFormat("0.000000");
 				
-				label1.setText(	oi.format(user_to_NDCX(x)));
-				label2.setText( oi.format(user_to_NDCY(y)));
+				labelResulNDCX.setText(	oi.format(user_to_NDCX(x)));
+				labelResulNDCY.setText( oi.format(user_to_NDCY(y)));
 				
-				label3.setText( Integer.toString((NDC_TO_DCX(user_to_NDCX(x)))));
-				label4.setText( Integer.toString((NDC_TO_DCY(user_to_NDCY(y)))));
+				labelResulDCX.setText( Integer.toString((NDC_TO_DCX(user_to_NDCX(x)))));
+				labelResulDCY.setText( Integer.toString((NDC_TO_DCY(user_to_NDCY(y)))));
 						
 				//System.out.printf("%.6f%n",user_to_NDCX(x));
 				//System.out.printf("%.6f%n",user_to_NDCY(y));
