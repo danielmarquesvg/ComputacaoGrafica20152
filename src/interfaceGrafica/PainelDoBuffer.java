@@ -78,7 +78,7 @@ public class PainelDoBuffer extends JPanel {
 		
 		try{
 			
-			buffer.setRGB(this.coordeX,this.coordeY, Color.BLACK.getRGB() );
+			buffer.setRGB(this.coordeX + 300, - this.coordeY + 300, Color.BLACK.getRGB() );
 			repaint();
 		
 		}catch(Exception e){
@@ -113,7 +113,7 @@ public class PainelDoBuffer extends JPanel {
 				x=x1;
 				y=y1;
 			
-				buffer.setRGB((int) Math.round(x), (int) Math.round(y), Color.BLACK.getRGB());
+				buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 		
 					//|| 
 					//x<x2 ||
@@ -129,7 +129,7 @@ public class PainelDoBuffer extends JPanel {
 							y = y + yinc;
 				
 							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
-							buffer.setRGB((int) Math.round(x),(int) Math.round(y), Color.BLACK.getRGB());
+							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 					
 					}
@@ -144,7 +144,7 @@ public class PainelDoBuffer extends JPanel {
 							y = y + yinc;
 				
 							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
-							buffer.setRGB((int) Math.round(x),(int) Math.round(y), Color.BLACK.getRGB());
+							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 					
 					}
@@ -160,7 +160,7 @@ public class PainelDoBuffer extends JPanel {
 							y = y + yinc;
 				
 							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
-							buffer.setRGB((int) Math.round(x),(int) Math.round(y), Color.BLACK.getRGB());
+							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 					
 					}
@@ -174,7 +174,7 @@ public class PainelDoBuffer extends JPanel {
 							y = y + yinc;
 				
 							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
-							buffer.setRGB((int) Math.round(x),(int) Math.round(y), Color.BLACK.getRGB());
+							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 					
 					if(x1>x2 && y1<y2){
@@ -188,7 +188,7 @@ public class PainelDoBuffer extends JPanel {
 							y = y + yinc;
 					
 							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
-							buffer.setRGB((int) Math.round(x),(int) Math.round(y), Color.BLACK.getRGB());
+							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 						
 					}else{
@@ -201,7 +201,7 @@ public class PainelDoBuffer extends JPanel {
 							y = y + yinc;
 				
 							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
-							buffer.setRGB((int) Math.round(x),(int) Math.round(y), Color.BLACK.getRGB());
+							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 						
 					}
