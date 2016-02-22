@@ -57,7 +57,7 @@ public class PanelNormalizacao extends JPanel {
 		
 		/*************/
 		add(painelBuffer);
-		painelBuffer.setLocation(30, 50);
+		painelBuffer.setLocation(361, 73);
 		
 		painelBuffer.limparTela();
 		painelBuffer.desenharRetasPlano();
@@ -66,121 +66,116 @@ public class PanelNormalizacao extends JPanel {
 				
 		
 		JLabel labelResulNDCX = new JLabel("0");
-		labelResulNDCX.setBounds(750, 50, 72, 43);
+		labelResulNDCX.setForeground(new Color(0, 102, 102));
+		labelResulNDCX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelResulNDCX.setBounds(80, 236, 81, 28);
 		add(labelResulNDCX);
 		
 		JLabel labelResulNDCY = new JLabel("0");
-		labelResulNDCY.setBounds(750, 106, 72, 49);
+		labelResulNDCY.setForeground(new Color(0, 102, 102));
+		labelResulNDCY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelResulNDCY.setBounds(80, 265, 81, 28);
 		add(labelResulNDCY);
 		
 		JLabel labelResulDCX = new JLabel("0");
-		labelResulDCX.setBounds(750, 166, 72, 49);
+		labelResulDCX.setForeground(new Color(0, 102, 102));
+		labelResulDCX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelResulDCX.setBounds(67, 357, 72, 28);
 		add(labelResulDCX);
 		
 		JLabel labelResulDCY = new JLabel("0");
-		labelResulDCY.setBounds(750, 226, 72, 49);
+		labelResulDCY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelResulDCY.setForeground(new Color(0, 102, 102));
+		labelResulDCY.setBounds(67, 381, 72, 28);
 		add(labelResulDCY);
 		
 		textFieldX1 = new JTextField();
-		textFieldX1.setBounds(670, 388, 72, 20);
+		textFieldX1.setForeground(new Color(0, 102, 102));
+		textFieldX1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		textFieldX1.setBounds(32, 481, 107, 28);
 		add(textFieldX1);
 		textFieldX1.setColumns(10);
 		
 		textFieldY1 = new JTextField();
-		textFieldY1.setBounds(670, 419, 72, 20);
+		textFieldY1.setForeground(new Color(0, 102, 102));
+		textFieldY1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		textFieldY1.setBounds(32, 520, 107, 28);
 		add(textFieldY1);
 		textFieldY1.setColumns(10);
 		
-		/*
-		textFieldX2 = new JTextField();
-		textFieldX2.setColumns(10);
-		textFieldX2.setBounds(780, 388, 72, 20);
-		add(textFieldX2);
+		JLabel labelValorX = new JLabel("");
+		labelValorX.setForeground(new Color(0, 102, 102));
+		labelValorX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelValorX.setBounds(37, 117, 61, 28);
+		add(labelValorX);
 		
-		textFieldY2 = new JTextField();
-		textFieldY2.setColumns(10);
-		textFieldY2.setBounds(780, 419, 72, 20);
-		add(textFieldY2);
-		*/
-		
-		JLabel labelX = new JLabel("");
-		labelX.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelX.setBounds(68, 650, 34, 28);
+		JLabel labelX = new JLabel("X:");
+		labelX.setForeground(new Color(0, 102, 102));
+		labelX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelX.setBounds(10, 117, 25, 28);
 		add(labelX);
 		
-		JLabel labelDoXY = new JLabel("X,Y:");
-		labelDoXY.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelDoXY.setBounds(40, 650, 25, 28);
-		add(labelDoXY);
+		JLabel labelValorY = new JLabel("");
+		labelValorY.setForeground(new Color(0, 102, 102));
+		labelValorY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelValorY.setBounds(37, 144, 61, 28);
+		add(labelValorY);
 		
-		JLabel labelY = new JLabel("");
-		labelY.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelY.setBounds(100, 650, 34, 28);
-		add(labelY);
+		JLabel labelPlotarX = new JLabel("X:");
+		labelPlotarX.setForeground(new Color(0, 102, 102));
+		labelPlotarX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelPlotarX.setBounds(14, 481, 25, 28);
+		add(labelPlotarX);
 		
-		JLabel labelX1 = new JLabel("X1:");
-		labelX1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelX1.setBounds(640, 391, 25, 14);
-		add(labelX1);
-		
-		JLabel labelY1 = new JLabel("Y1:");
-		labelY1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelY1.setBounds(640, 422, 25, 14);
-		add(labelY1);
-		
-		
-		/*
-		 JLabel lblX = new JLabel("X2:");
-		lblX.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblX.setBounds(750, 391, 25, 14);
-		add(lblX);
-		
-		JLabel lblY_1 = new JLabel("Y2:");
-		lblY_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblY_1.setBounds(750, 422, 25, 14);
-		add(lblY_1);
-		*/
-		
-		
+		JLabel labelPlotarY = new JLabel("Y:");
+		labelPlotarY.setForeground(new Color(0, 102, 102));
+		labelPlotarY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelPlotarY.setBounds(10, 520, 19, 28);
+		add(labelPlotarY);
+
 		JLabel labelNDCX = new JLabel("NDCX:");
-		labelNDCX.setBounds(700, 63, 46, 14);
+		labelNDCX.setForeground(new Color(0, 102, 102));
+		labelNDCX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelNDCX.setBounds(10, 240, 61, 21);
 		add(labelNDCX);
 		
 		JLabel labelNDCY = new JLabel("NDCY:");
-		labelNDCY.setBounds(700, 123, 46, 14);
+		labelNDCY.setForeground(new Color(0, 102, 102));
+		labelNDCY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelNDCY.setBounds(10, 265, 52, 28);
 		add(labelNDCY);
 		
 		JLabel labelDCX = new JLabel("DCX:");
-		labelDCX.setBounds(700, 183, 46, 14);
+		labelDCX.setForeground(new Color(0, 102, 102));
+		labelDCX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelDCX.setBounds(10, 361, 46, 21);
 		add(labelDCX);
 		
 		JLabel labelDCY = new JLabel("DCY:");
-		labelDCY.setBounds(700, 243, 46, 14);
+		labelDCY.setForeground(new Color(0, 102, 102));
+		labelDCY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelDCY.setBounds(11, 381, 46, 28);
 		add(labelDCY);
-		
-		
 
-		JButton botaoPlotarPixel = new JButton("Plotar");
-		botaoPlotarPixel.setBounds(650, 465, 89, 23);
+		JButton botaoPlotarPixel = new JButton("Plotar Pixel");
+		botaoPlotarPixel.setBounds(32, 569, 145, 44);
+		botaoPlotarPixel.setForeground(Color.WHITE);
+		botaoPlotarPixel.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoPlotarPixel.setBackground(new Color(0, 102, 102));
 		add(botaoPlotarPixel);
 		
-		JButton btnLimparTela = new JButton("Limpar");
-		btnLimparTela.setBounds(650, 499, 89, 23);
+		JButton btnLimparTela = new JButton("Limpar a tela");
+		btnLimparTela.setForeground(Color.WHITE);
+		btnLimparTela.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		btnLimparTela.setBackground(new Color(0, 102, 102));
+		btnLimparTela.setBounds(32, 624, 145, 44);
 		add(btnLimparTela);
 		
-		//763
-		/*JButton botaoPlotarReta = new JButton("Reta");
-		botaoPlotarReta.setBounds(650, 465, 89, 23);
-		add(botaoPlotarReta);*/
-		
 		JRadioButton botaoMouse = new JRadioButton("Mouse",false);
-		botaoMouse.setBounds(160, 650, 109, 23);
+		botaoMouse.setBounds(-462, 650, 109, 23);
 		add(botaoMouse);
-		/**************/
-		
-		
-		
-		
+
+
 		JButton botaoPaginaInicial = new JButton("");
 		botaoPaginaInicial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent eventoDeCliqueDeMouse) {
@@ -200,6 +195,60 @@ public class PanelNormalizacao extends JPanel {
 		botaoPaginaInicial.setContentAreaFilled(false);
 		botaoPaginaInicial.setBorderPainted(true);
 		
+		JPanel panelCoordenadasDoMundo = new JPanel();
+		panelCoordenadasDoMundo.setBackground(new Color(0, 102, 102));
+		panelCoordenadasDoMundo.setBounds(0, 73, 308, 42);
+		add(panelCoordenadasDoMundo);
+		panelCoordenadasDoMundo.setLayout(null);
+		
+		JLabel labelCoordenadasDoMundo = new JLabel("Coordenadas do Mundo");
+		labelCoordenadasDoMundo.setForeground(Color.WHITE);
+		labelCoordenadasDoMundo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelCoordenadasDoMundo.setBounds(10, 11, 273, 27);
+		panelCoordenadasDoMundo.add(labelCoordenadasDoMundo);
+		
+		JLabel labelY = new JLabel("Y:");
+		labelY.setForeground(new Color(0, 102, 102));
+		labelY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelY.setBounds(10, 144, 25, 28);
+		add(labelY);
+		
+		JPanel panelNormalizacaoDoDispositivo = new JPanel();
+		panelNormalizacaoDoDispositivo.setLayout(null);
+		panelNormalizacaoDoDispositivo.setBackground(new Color(0, 102, 102));
+		panelNormalizacaoDoDispositivo.setBounds(0, 194, 308, 42);
+		add(panelNormalizacaoDoDispositivo);
+		
+		JLabel labelNormalizacaoDoDispositivo = new JLabel("Normalização do Dispositivo");
+		labelNormalizacaoDoDispositivo.setForeground(Color.WHITE);
+		labelNormalizacaoDoDispositivo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelNormalizacaoDoDispositivo.setBounds(10, 11, 273, 27);
+		panelNormalizacaoDoDispositivo.add(labelNormalizacaoDoDispositivo);
+		
+		JPanel panelCoordenadasDoDispositivo = new JPanel();
+		panelCoordenadasDoDispositivo.setLayout(null);
+		panelCoordenadasDoDispositivo.setBackground(new Color(0, 102, 102));
+		panelCoordenadasDoDispositivo.setBounds(0, 314, 308, 42);
+		add(panelCoordenadasDoDispositivo);
+		
+		JLabel labelCoordenadaDoDispositivo = new JLabel("Coordenada do Dipositivo");
+		labelCoordenadaDoDispositivo.setForeground(Color.WHITE);
+		labelCoordenadaDoDispositivo.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelCoordenadaDoDispositivo.setBounds(10, 11, 273, 27);
+		panelCoordenadasDoDispositivo.add(labelCoordenadaDoDispositivo);
+		
+		JPanel panelPlotarPixel = new JPanel();
+		panelPlotarPixel.setLayout(null);
+		panelPlotarPixel.setBackground(new Color(0, 102, 102));
+		panelPlotarPixel.setBounds(0, 434, 308, 42);
+		add(panelPlotarPixel);
+		
+		JLabel labelPlotarPixel = new JLabel("Plotar Pixel");
+		labelPlotarPixel.setForeground(Color.WHITE);
+		labelPlotarPixel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelPlotarPixel.setBounds(10, 11, 273, 27);
+		panelPlotarPixel.add(labelPlotarPixel);
+		
 		btnLimparTela.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {	
 				
@@ -207,8 +256,6 @@ public class PanelNormalizacao extends JPanel {
 				painelBuffer.desenharRetasPlano();
 				textFieldX1.setText("");
 				textFieldY1.setText("");
-				//textFieldX2.setText("");
-				//textFieldY2.setText("");
 				
 				labelResulNDCX.setText("");
 				labelResulNDCY.setText("");
@@ -225,21 +272,16 @@ public class PanelNormalizacao extends JPanel {
 				int x = arg0.getX()-300;
 				int y = 300-arg0.getY();
 				
-				labelX.setText(Integer.toString(x));
-				labelY.setText(Integer.toString(y));
+				labelValorX.setText(Integer.toString(x));
+				labelValorY.setText(Integer.toString(y));
 				
 				DecimalFormat oi = new DecimalFormat("0.000000");
 				
 				labelResulNDCX.setText(	oi.format(user_to_NDCX(x)));
 				labelResulNDCY.setText( oi.format(user_to_NDCY(y)));
-				
+
 				labelResulDCX.setText( Integer.toString((NDC_TO_DCX(user_to_NDCX(x)))));
-				labelResulDCY.setText( Integer.toString((NDC_TO_DCY(user_to_NDCY(y)))));
-						
-				//System.out.printf("%.6f%n",user_to_NDCX(x));
-				//System.out.printf("%.6f%n",user_to_NDCY(y));
-				
-				//System.out.println(x+" "+ y);
+				labelResulDCY.setText( Integer.toString((NDC_TO_DCY(user_to_NDCX(y)))));
 			}
 			
 		});
@@ -280,31 +322,25 @@ public class PanelNormalizacao extends JPanel {
 										painelBuffer.setXX(x);
 										painelBuffer.setYY(y);
 										painelBuffer.plotarPixel();
-										
-										
+	
 									}	
-
 								}
-								
 							});	
-					
 					}
 				});
-		
 	}
 	
 	public double user_to_NDCX (double x){
 		
-		double result = (x-0) / (600-0);
+		double result = (x-(-300)) / (300-(-300));
 		
-		//System.out.printf("%.6f%n",result);	
 		return result;	
 	}
 	
 	public double user_to_NDCY (double y){
 		
 		
-		return (y-0) / (600-0);	
+		return (y-(-300)) / (300-(-300));	
 	}
 	
 	public int NDC_TO_DCX(double NDCX){
@@ -316,5 +352,4 @@ public class PanelNormalizacao extends JPanel {
 		
 		return (int) Math.round(NDCY*599);	
 	}
-
 }

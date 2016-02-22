@@ -24,8 +24,6 @@ public class PanelReta extends JPanel {
 	int x2 = 0;
 	int y2 = 0;
 
-	// BufferedImage buffer = new
-	// BufferedImage(600,600,BufferedImage.TYPE_INT_RGB);
 	PainelDoBuffer painelBuffer = new PainelDoBuffer();
 	private JTextField textFieldX1;
 	private JTextField textFieldY1;
@@ -57,111 +55,87 @@ public class PanelReta extends JPanel {
 		int newWidth = width / scale;
 
 		add(painelBuffer);
-		painelBuffer.setLocation(30, 50);
+		painelBuffer.setLocation(368, 75);
 
 		painelBuffer.limparTela();
 		painelBuffer.desenharRetasPlano();
 
-		// a partir daqui esta as alteraçoes da RETA by @Kawe
-
-		JLabel label1 = new JLabel("0");
-		label1.setBounds(750, 50, 72, 43);
-		add(label1);
-
-		JLabel label2 = new JLabel("0");
-		label2.setBounds(750, 106, 72, 49);
-		add(label2);
-
-		JLabel label3 = new JLabel("0");
-		label3.setBounds(750, 166, 72, 49);
-		add(label3);
-
-		JLabel label4 = new JLabel("0");
-		label4.setBounds(750, 226, 72, 49);
-		add(label4);
-
 		textFieldX1 = new JTextField();
-		textFieldX1.setBounds(670, 388, 72, 20);
+		textFieldX1.setForeground(new Color(0, 102, 153));
+		textFieldX1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		textFieldX1.setBounds(42, 177, 122, 24);
 		add(textFieldX1);
 		textFieldX1.setColumns(10);
 
 		textFieldY1 = new JTextField();
-		textFieldY1.setBounds(670, 419, 72, 20);
+		textFieldY1.setForeground(new Color(0, 102, 153));
+		textFieldY1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		textFieldY1.setBounds(42, 208, 122, 24);
 		add(textFieldY1);
 		textFieldY1.setColumns(10);
 
 		textFieldX2 = new JTextField();
+		textFieldX2.setForeground(new Color(0, 102, 153));
+		textFieldX2.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
 		textFieldX2.setColumns(10);
-		textFieldX2.setBounds(780, 388, 72, 20);
+		textFieldX2.setBounds(42, 301, 122, 24);
 		add(textFieldX2);
 
 		textFieldY2 = new JTextField();
+		textFieldY2.setForeground(new Color(0, 102, 153));
+		textFieldY2.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
 		textFieldY2.setColumns(10);
-		textFieldY2.setBounds(780, 419, 72, 20);
+		textFieldY2.setBounds(42, 330, 122, 24);
 		add(textFieldY2);
 
 		JLabel labelX = new JLabel("");
-		labelX.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelX.setBounds(68, 650, 34, 28);
+		labelX.setForeground(new Color(0, 102, 153));
+		labelX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelX.setBounds(28, 576, 88, 28);
 		add(labelX);
 
-		JLabel labelDoXY = new JLabel("X,Y:");
-		labelDoXY.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelDoXY.setBounds(40, 650, 25, 28);
-		add(labelDoXY);
-
 		JLabel labelY = new JLabel("");
-		labelY.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		labelY.setBounds(100, 650, 34, 28);
+		labelY.setForeground(new Color(0, 102, 153));
+		labelY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelY.setBounds(28, 609, 88, 28);
 		add(labelY);
 
-		JLabel lblNewLabel = new JLabel("X1:");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblNewLabel.setBounds(640, 391, 25, 14);
-		add(lblNewLabel);
+		JLabel labelX1 = new JLabel("X1:");
+		labelX1.setForeground(new Color(0, 102, 153));
+		labelX1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelX1.setBounds(10, 177, 25, 20);
+		add(labelX1);
 
-		JLabel lblY = new JLabel("Y1:");
-		lblY.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblY.setBounds(640, 422, 25, 14);
-		add(lblY);
+		JLabel labelY1 = new JLabel("Y1:");
+		labelY1.setForeground(new Color(0, 102, 153));
+		labelY1.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelY1.setBounds(10, 208, 25, 24);
+		add(labelY1);
 
-		JLabel lblX = new JLabel("X2:");
-		lblX.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblX.setBounds(750, 391, 25, 14);
-		add(lblX);
+		JLabel labelX2 = new JLabel("X2:");
+		labelX2.setForeground(new Color(0, 102, 153));
+		labelX2.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelX2.setBounds(10, 306, 25, 19);
+		add(labelX2);
 
-		JLabel lblY_1 = new JLabel("Y2:");
-		lblY_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblY_1.setBounds(750, 422, 25, 14);
-		add(lblY_1);
+		JLabel labelY2 = new JLabel("Y2:");
+		labelY2.setForeground(new Color(0, 102, 153));
+		labelY2.setFont(new Font("Segoe UI Semilight", Font.BOLD, 18));
+		labelY2.setBounds(10, 330, 34, 24);
+		add(labelY2);
 
-		JLabel lblNewLabel_1 = new JLabel("NDCX:");
-		lblNewLabel_1.setBounds(700, 63, 46, 14);
-		add(lblNewLabel_1);
+		JButton botaoLimparTela = new JButton("Limpar a tela");
+		botaoLimparTela.setBounds(42, 440, 153, 42);
+		botaoLimparTela.setForeground(Color.WHITE);
+		botaoLimparTela.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoLimparTela.setBackground(new Color(0, 102, 153));
+		add(botaoLimparTela);
 
-		JLabel lblNdcy = new JLabel("NDCY:");
-		lblNdcy.setBounds(700, 123, 46, 14);
-		add(lblNdcy);
-
-		JLabel lblDcy = new JLabel("DCX:");
-		lblDcy.setBounds(700, 183, 46, 14);
-		add(lblDcy);
-
-		JLabel lblDcy_1 = new JLabel("DCY:");
-		lblDcy_1.setBounds(700, 243, 46, 14);
-		add(lblDcy_1);
-
-		/*
-		 * JButton botaoPlotarPixel = new JButton("Plotar");
-		 * botaoPlotarPixel.setBounds(650, 465, 89, 23); add(botaoPlotarPixel);
-		 */
-		JButton btnLimparTela = new JButton("Limpar");
-		btnLimparTela.setBounds(650, 499, 89, 23);
-		add(btnLimparTela);
-
-		// 763
-		JButton botaoPlotarReta = new JButton("Reta");
-		botaoPlotarReta.setBounds(650, 465, 89, 23);
+		JButton botaoPlotarReta = new JButton("Plotar Reta");
+		botaoPlotarReta.setBounds(42, 381, 153, 42);
+		botaoPlotarReta.setForeground(Color.WHITE);
+		botaoPlotarReta.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoPlotarReta.setBackground(new Color(0, 102, 153));
 		add(botaoPlotarReta);
 
 		JButton botaoPaginaInicial = new JButton("");
@@ -183,10 +157,58 @@ public class PanelReta extends JPanel {
 		botaoPaginaInicial.setOpaque(false);
 		botaoPaginaInicial.setContentAreaFilled(false);
 		botaoPaginaInicial.setBorderPainted(true);
+		
+		JPanel panelPlotarReta = new JPanel();
+		panelPlotarReta.setLayout(null);
+		panelPlotarReta.setBackground(new Color(0, 102, 153));
+		panelPlotarReta.setBounds(0, 75, 308, 42);
+		add(panelPlotarReta);
+		
+		JLabel labelPlotarReta = new JLabel("Plotar Pixel");
+		labelPlotarReta.setForeground(Color.WHITE);
+		labelPlotarReta.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelPlotarReta.setBounds(10, 11, 273, 27);
+		panelPlotarReta.add(labelPlotarReta);
+		
+		JLabel labelPixelInicial = new JLabel("Pixel Inicial");
+		labelPixelInicial.setForeground(new Color(0, 102, 153));
+		labelPixelInicial.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelPixelInicial.setBounds(10, 140, 171, 28);
+		add(labelPixelInicial);
+		
+		JLabel labelPixelFinal = new JLabel("Pixel Final");
+		labelPixelFinal.setForeground(new Color(0, 102, 153));
+		labelPixelFinal.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelPixelFinal.setBounds(10, 262, 171, 28);
+		add(labelPixelFinal);
+		
+		JPanel panelCoordenadas = new JPanel();
+		panelCoordenadas.setLayout(null);
+		panelCoordenadas.setBackground(new Color(0, 102, 153));
+		panelCoordenadas.setBounds(0, 523, 308, 42);
+		add(panelCoordenadas);
+		
+		JLabel labelCoordenadas = new JLabel("Coordenadas");
+		labelCoordenadas.setForeground(Color.WHITE);
+		labelCoordenadas.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
+		labelCoordenadas.setBounds(10, 11, 273, 27);
+		panelCoordenadas.add(labelCoordenadas);
+		
+		JLabel labelCoordenadaX = new JLabel("X:");
+		labelCoordenadaX.setForeground(new Color(0, 102, 153));
+		labelCoordenadaX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelCoordenadaX.setBounds(10, 576, 25, 28);
+		add(labelCoordenadaX);
+		
+		JLabel labelCoordenadaY = new JLabel("Y:");
+		labelCoordenadaY.setForeground(new Color(0, 102, 153));
+		labelCoordenadaY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelCoordenadaY.setBounds(10, 609, 25, 28);
+		add(labelCoordenadaY);
 
 		// evento para colocar todos os pixeis brancos
 
-		btnLimparTela.addActionListener(new ActionListener() {
+		botaoLimparTela.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				painelBuffer.limparTela();
@@ -196,34 +218,10 @@ public class PanelReta extends JPanel {
 				textFieldX2.setText("");
 				textFieldY2.setText("");
 
-				label1.setText("");
-				label2.setText("");
-				label3.setText("");
-				label4.setText("");
+				
 
 			}
 		});
-
-		// Evento para plotar o pixel nas coordenadas (Foi pra teste)
-
-		/*
-		 * botaoPlotarPixel.addActionListener(new ActionListener() { public void
-		 * actionPerformed(ActionEvent arg0) {
-		 * 
-		 * try{
-		 * 
-		 * painelBuffer.setXX(Integer.parseInt(textFieldX1.getText()));
-		 * painelBuffer.setYY(Integer.parseInt(textFieldY1.getText()));
-		 * painelBuffer.plotarPixel();
-		 * 
-		 * 
-		 * }catch(Exception e){
-		 * 
-		 * JOptionPane.showMessageDialog(null,
-		 * "Digite um número válido: X: 0 a 600 e Y: 0 a 600"); }
-		 * 
-		 * } });
-		 */
 
 		// Evento quando o mouse move, para pegar as coordenadas
 
@@ -237,18 +235,6 @@ public class PanelReta extends JPanel {
 				labelX.setText(Integer.toString(x));
 				labelY.setText(Integer.toString(y));
 
-				DecimalFormat oi = new DecimalFormat("0.000000");
-
-				label1.setText(oi.format(user_to_NDCX(x)));
-				label2.setText(oi.format(user_to_NDCY(y)));
-
-				label3.setText(Integer.toString((NDC_TO_DCX(user_to_NDCX(x)))));
-				label4.setText(Integer.toString((NDC_TO_DCY(user_to_NDCY(y)))));
-
-				// System.out.printf("%.6f%n",user_to_NDCX(x));
-				// System.out.printf("%.6f%n",user_to_NDCY(y));
-
-				// System.out.println(x+" "+ y);
 			}
 
 		});
@@ -262,57 +248,12 @@ public class PanelReta extends JPanel {
 					painelBuffer.plotarRetaDDA(Integer.parseInt(textFieldX1.getText()),
 							Integer.parseInt(textFieldY1.getText()), Integer.parseInt(textFieldX2.getText()),
 							Integer.parseInt(textFieldY2.getText()));
-					// painelBuffer.desenharRetasPlano();
-					// painelBuffer.repaint();
+					
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Ocorreu um erro!");
 				}
 			}
 
-		});
-
-
-		painelBuffer.addMouseListener(new MouseAdapter() {
-
-			public void mouseClicked(MouseEvent e) {
-				if (primeiroClick) {
-					try {
-						System.out.println("primeiro click: x == " + e.getX() + " e y == " + e.getY());
-						System.out.println("");
-						primeiroClick = false;
-						x1 = e.getX() - 300;
-						y1 = 300 - e.getY();
-						
-						user_to_NDCX(x1);
-						user_to_NDCY(y1);
-						
-						user_to_NDCX(x1);
-						user_to_NDCY(y1);	
-					} catch (Exception e2) {
-						JOptionPane.showMessageDialog(null, "Ocorreu um erro!");
-					}
-
-				} else {
-					try {
-						System.out.println("segundo click: x2 == " + e.getX() + " e y2 == " + e.getY());
-						System.out.println("");
-						primeiroClick = true;
-						x2 = e.getX() - 300;
-						y2 = 300 - e.getY();
-						
-						user_to_NDCX(x2);
-						user_to_NDCY(y2);
-						
-						user_to_NDCX(x2);
-						user_to_NDCY(y2);
-						
-						painelBuffer.plotarRetaDDA(x1, y1, x2, y2);
-					} catch (Exception e2) {
-						JOptionPane.showMessageDialog(null, "Ocorreu um erro!");
-					}
-
-				}
-			}
 		});
 
 		botaoPlotarReta.addActionListener(new ActionListener() {
@@ -331,31 +272,6 @@ public class PanelReta extends JPanel {
 			}
 
 		});
-	}
-
-	// Métodos da normalizaçao
-
-	public double user_to_NDCX(double x) {
-
-		double result = (x - 0) / (600 - 0);
-
-		// System.out.printf("%.6f%n",result);
-		return result;
-	}
-
-	public double user_to_NDCY(double y) {
-
-		return (y - 0) / (600 - 0);
-	}
-
-	public int NDC_TO_DCX(double NDCX) {
-
-		return (int) Math.round(NDCX * 599);
-	}
-
-	public int NDC_TO_DCY(double NDCY) {
-
-		return (int) Math.round(NDCY * 599);
 	}
 
 }

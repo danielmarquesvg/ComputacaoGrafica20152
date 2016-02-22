@@ -22,9 +22,6 @@ public class PainelDoBuffer extends JPanel {
 		setBounds(new Rectangle(0, 0, 600, 600));
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 
-		//limparTela();
-		//repaint();
-		//desenharRetasPlano();
 		repaint();
 	
 	}
@@ -96,19 +93,14 @@ public class PainelDoBuffer extends JPanel {
 			double x,y,xinc,yinc;
 		
 			comprimento = (int) Math.abs(x2-x1);
-			System.out.println("comprimento x2-x1: "+comprimento);
 		
 					if(Math.abs(y2-y1) > comprimento){
 						comprimento = (int) Math.abs(y2-y1);
-						System.out.println("comprimento y2-y1: "+comprimento);
 					}
 		
-				System.out.println("Valor de x1 e x2: "+x1+" "+x2);
 					
 				xinc = (x2-x1)/comprimento;
-				System.out.println("Valor de xinc: "+xinc);
 				yinc = (y2-y1)/comprimento;
-				System.out.println("Valor de yinc: "+yinc);
 		
 				x=x1;
 				y=y1;
@@ -120,30 +112,23 @@ public class PainelDoBuffer extends JPanel {
 				//||y<y2
 					if(x1==x2 && y<y2){
 						
-						System.out.println("Cond1");
 						while( y<y2 ){
-							
-							System.out.println("Valor de x do while: "+x+" e valor de x2: "+x2);
 					
 							x = x + xinc;
 							y = y + yinc;
 				
-							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
 							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 					
 					}
 						
 					if(x1==x2 && y>y2){
-						System.out.println("Cond2");
-						while( y>y2 ){
-							
-							System.out.println("Valor de x do while: "+x+" e valor de x2: "+x2);
+
+						while( y>y2 ){							
 					
 							x = x + xinc;
 							y = y + yinc;
 				
-							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
 							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 					
@@ -151,15 +136,12 @@ public class PainelDoBuffer extends JPanel {
 				
 		
 					if(x1>x2 && y1>y2){
-						System.out.println("Cond3");
+
 						while( x>x2 ){
-						
-							System.out.println("Valor de x do while: "+x+" e valor de x2: "+x2);
 					
 							x = x + xinc;
 							y = y + yinc;
 				
-							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
 							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 					
@@ -167,40 +149,30 @@ public class PainelDoBuffer extends JPanel {
 				
 					
 						while( x<x2 ){
-							System.out.println("Cond4");
-							System.out.println("Valor de x do while: "+x+" e valor de x2: "+x2);
 					
 							x = x + xinc;
 							y = y + yinc;
 				
-							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
 							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 					
 					if(x1>x2 && y1<y2){
 						
-						System.out.println("Cond5");
 						while( y<y2 ){
-							
-							System.out.println("Valor de x do while: "+x+" e valor de x2: "+x2);
 						
 							x = x + xinc;
 							y = y + yinc;
 					
-							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
 							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 						
 					}else{
 						
 						while( x<x2 || x>x2){
-							System.out.println("Cond4");
-							System.out.println("Valor de x do while: "+x+" e valor de x2: "+x2);
-					
+
 							x = x + xinc;
 							y = y + yinc;
 				
-							System.out.println("x: "+ (int) Math.round(x)+" e y: "+(int) Math.round(y));
 							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
 						}
 						
