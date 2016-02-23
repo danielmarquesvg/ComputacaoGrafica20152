@@ -294,6 +294,17 @@ public class PanelNormalizacao extends JPanel {
 					painelBuffer.setXX(Integer.parseInt(textFieldX1.getText()));
 					painelBuffer.setYY(Integer.parseInt(textFieldY1.getText()));
 					painelBuffer.plotarPixel();
+					
+					labelValorX.setText(textFieldX1.getText());
+					labelValorY.setText(textFieldY1.getText());
+					
+					DecimalFormat oi = new DecimalFormat("0.000000");
+					
+					labelResulNDCX.setText(	oi.format(user_to_NDCX(Integer.parseInt(textFieldX1.getText()))));
+					labelResulNDCY.setText( oi.format(user_to_NDCY(Integer.parseInt(textFieldY1.getText()))));
+
+					labelResulDCX.setText( Integer.toString((NDC_TO_DCX(user_to_NDCX(Integer.parseInt(textFieldX1.getText()))))));
+					labelResulDCY.setText( Integer.toString((NDC_TO_DCY(user_to_NDCX(Integer.parseInt(textFieldY1.getText()))))));
 				
 					
 				}catch(Exception e){
