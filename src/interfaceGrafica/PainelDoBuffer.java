@@ -12,6 +12,7 @@ import java.awt.Rectangle;
 public class PainelDoBuffer extends JPanel {
 
 	int coordeX,coordeY;
+	double xincAtual, yincAtual;
 	
 	
 	BufferedImage buffer = new BufferedImage(600,600,BufferedImage.TYPE_INT_RGB);
@@ -102,6 +103,9 @@ public class PainelDoBuffer extends JPanel {
 				xinc = (x2-x1)/comprimento;
 				yinc = (y2-y1)/comprimento;
 		
+				this.xincAtual = xinc;
+				this.yincAtual = yinc;
+				
 				x=x1;
 				y=y1;
 			
@@ -201,5 +205,11 @@ public class PainelDoBuffer extends JPanel {
 	
 	public void setYY(int coordeY){
 		this.coordeY = coordeY ;
+	}
+	public double getXinc(){
+		return xincAtual;
+	}
+	public double getYinc(){
+		return yincAtual;
 	}
 }

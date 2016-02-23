@@ -205,6 +205,30 @@ public class PanelReta extends JPanel {
 		labelCoordenadaY.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
 		labelCoordenadaY.setBounds(10, 609, 25, 28);
 		add(labelCoordenadaY);
+		
+		JLabel labelXinc = new JLabel("Xinc:");
+		labelXinc.setForeground(new Color(0, 102, 153));
+		labelXinc.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelXinc.setBounds(156, 576, 39, 28);
+		add(labelXinc);
+		
+		JLabel labelYinc = new JLabel("Yinc:");
+		labelYinc.setForeground(new Color(0, 102, 153));
+		labelYinc.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelYinc.setBounds(156, 609, 39, 28);
+		add(labelYinc);
+		
+		JLabel labelValorXinc = new JLabel("");
+		labelValorXinc.setForeground(new Color(0, 102, 153));
+		labelValorXinc.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelValorXinc.setBounds(205, 576, 88, 28);
+		add(labelValorXinc);
+		
+		JLabel labelValorYinc = new JLabel("");
+		labelValorYinc.setForeground(new Color(0, 102, 153));
+		labelValorYinc.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		labelValorYinc.setBounds(205, 609, 88, 28);
+		add(labelValorYinc);
 
 		// evento para colocar todos os pixeis brancos
 
@@ -217,6 +241,8 @@ public class PanelReta extends JPanel {
 				textFieldY1.setText("");
 				textFieldX2.setText("");
 				textFieldY2.setText("");
+				labelValorXinc.setText("");
+				labelValorYinc.setText("");
 
 				
 
@@ -249,6 +275,11 @@ public class PanelReta extends JPanel {
 							Integer.parseInt(textFieldY1.getText()), Integer.parseInt(textFieldX2.getText()),
 							Integer.parseInt(textFieldY2.getText()));
 					
+					DecimalFormat deci = new DecimalFormat("0.00");
+					
+					labelValorXinc.setText(deci.format(painelBuffer.getXinc()));
+					labelValorYinc.setText(deci.format(painelBuffer.getYinc()));
+					
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(null, "Ocorreu um erro!");
 				}
@@ -273,5 +304,4 @@ public class PanelReta extends JPanel {
 
 		});
 	}
-
 }
