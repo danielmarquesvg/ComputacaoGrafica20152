@@ -16,6 +16,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import funcoes.Reta;
+
+@SuppressWarnings("serial")
 public class PanelReta extends JPanel {
 	boolean primeiroClick = true;
 	int x1 = 0;
@@ -253,10 +256,10 @@ public class PanelReta extends JPanel {
 
 		painelBuffer.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
-			public void mouseMoved(MouseEvent arg0) {
+			public void mouseMoved(MouseEvent movimentoDoMouse) {
 
-				int x = arg0.getX() - 300;
-				int y = 300 - arg0.getY();
+				int x = movimentoDoMouse.getX() - 300;
+				int y = 300 - movimentoDoMouse.getY();
 
 				labelX.setText(Integer.toString(x));
 				labelY.setText(Integer.toString(y));
@@ -272,9 +275,10 @@ public class PanelReta extends JPanel {
 
 				try {
 					painelBuffer.plotarRetaDDA(Integer.parseInt(textFieldX1.getText()),
-							Integer.parseInt(textFieldY1.getText()), Integer.parseInt(textFieldX2.getText()),
-							Integer.parseInt(textFieldY2.getText()));
-					
+							           Integer.parseInt(textFieldY1.getText()), 
+							           Integer.parseInt(textFieldX2.getText()),
+							           Integer.parseInt(textFieldY2.getText()));
+
 					DecimalFormat deci = new DecimalFormat("0.00");
 					
 					labelValorXinc.setText(deci.format(painelBuffer.getXinc()));
@@ -287,21 +291,41 @@ public class PanelReta extends JPanel {
 
 		});
 
-		botaoPlotarReta.addActionListener(new ActionListener() {
+		// Evento quando o mouse é clicado, para pegar as coordenadas da reta
 
-			public void actionPerformed(ActionEvent arg0) {
+		painelBuffer.addMouseListener(new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
 
+				if (primeiroClick) {
+					try {
+						primeiroClick = false;
+						x1 = e.getX() - 300;
+						y1 = 300 - e.getY();
+
+						x1 = Reta.user_to_DC(x1);
+						y1 = Reta.user_to_DC(y1);
+
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(null, "Ocorreu um erro ao plotar a reta!");
+					}
+				} else {
 				try {
-					painelBuffer.plotarRetaDDA(Integer.parseInt(textFieldX1.getText()),
-							Integer.parseInt(textFieldY1.getText()), Integer.parseInt(textFieldX2.getText()),
-							Integer.parseInt(textFieldY2.getText()));
-					// painelBuffer.desenharRetasPlano();
-					// painelBuffer.repaint();
-				} catch (Exception e) {
-					JOptionPane.showMessageDialog(null, "Ocorreu um erro!");
+						primeiroClick = true;
+						x2 = e.getX() - 300;
+						y2 = 300 - e.getY();
+
+						x2 = Reta.user_to_DC(x2);
+						y2 = Reta.user_to_DC(y2);
+
+						painelBuffer.plotarRetaDDA(x1, y1, x2, y2);
+
+					} catch (Exception e2) {
+						JOptionPane.showMessageDialog(null, "Ocorreu um erro ao plotar a reta!");
+					}
 				}
 			}
-
 		});
+
 	}
+
 }

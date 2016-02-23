@@ -1,4 +1,5 @@
 package interfaceGrafica;
+
 import java.awt.image.BufferedImage;
 
 import javax.swing.JOptionPane;
@@ -8,7 +9,7 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-
+@SuppressWarnings("serial")
 public class PainelDoBuffer extends JPanel {
 
 	int coordeX,coordeY;
@@ -85,112 +86,73 @@ public class PainelDoBuffer extends JPanel {
 		
 	}
 	
-	//Método de plotar a reta
-	public void plotarRetaDDA(double x1, double y1,double x2, double y2){
+
+	// Método de plotar a reta
+	public void plotarRetaDDA(double x1, double y1, double x2, double y2) {
 		
-		try{
+		try {
 		
 			int comprimento;
-			double x,y,xinc,yinc;
-		
-			comprimento = (int) Math.abs(x2-x1);
-		
-					if(Math.abs(y2-y1) > comprimento){
-						comprimento = (int) Math.abs(y2-y1);
-					}
-		
-					
-				xinc = (x2-x1)/comprimento;
-				yinc = (y2-y1)/comprimento;
-		
-				this.xincAtual = xinc;
-				this.yincAtual = yinc;
-				
-				x=x1;
-				y=y1;
-			
-				buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
-		
-					//|| 
-					//x<x2 ||
-				//||y<y2
-					if(x1==x2 && y<y2){
-						
-						while( y<y2 ){
-					
-							x = x + xinc;
-							y = y + yinc;
-				
-							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
-						}
-					
-					}
-						
-					if(x1==x2 && y>y2){
+			double x, y, xinc, yinc;
 
-						while( y>y2 ){							
-					
-							x = x + xinc;
-							y = y + yinc;
-				
-							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
-						}
-					
-					}
-				
+			comprimento = (int) Math.abs(x2 - x1);
 		
-					if(x1>x2 && y1>y2){
+			if (Math.abs(y2 - y1) > comprimento) {
+				comprimento = (int) Math.abs(y2 - y1);
+			}
 
-						while( x>x2 ){
-					
-							x = x + xinc;
-							y = y + yinc;
-				
-							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
-						}
-					
-					}
-				
-					
-						while( x<x2 ){
-					
-							x = x + xinc;
-							y = y + yinc;
-				
-							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
-						}
-					
-					if(x1>x2 && y1<y2){
-						
-						while( y<y2 ){
-						
-							x = x + xinc;
-							y = y + yinc;
-					
-							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
-						}
-						
-					}else{
-						
-						while( x<x2 || x>x2){
+			x = x1;
+			y = y1;
 
-							x = x + xinc;
-							y = y + yinc;
-				
-							buffer.setRGB((int) Math.round(x) + 300, - (int) Math.round(y) + 300, Color.BLACK.getRGB());
-						}
-						
-					}
+			xinc = Math.abs((x2 - x1) / comprimento);
+			yinc = Math.abs((y2 - y1) / comprimento);
 
-					repaint();
-					
-		}catch(Exception e){
-			
+			if (x1 < x2) {  
+				
+				if (y1 < y2) { // Retas da esquerda para a direita, de baixo para cima
+					do {
+						buffer.setRGB((int) Math.round(x) + 300, -(int) Math.round(y) + 300, Color.BLACK.getRGB());
+						x += xinc;
+						y += yinc;
+					} while (x <= x2 && y <= y2);
+
+				} else { // Retas da esquerda para a direita, de cima para baixo 					
+					do {
+						buffer.setRGB((int) Math.round(x) + 300, -(int) Math.round(y) + 300, Color.BLACK.getRGB());
+						x += xinc;
+						y -= yinc;
+					} while (x <= x2 && y >= y2);
+
+				}
+				
+			} else { 
+				 
+				if (y1 < y2) { // Retas da direita para a esquerda, de baixo para cima
+					do {
+						buffer.setRGB((int) Math.round(x) + 300, -(int) Math.round(y) + 300, Color.BLACK.getRGB());
+						x -= xinc;
+						y += yinc;
+					} while (x >= x2 && y <= y2);
+
+				} else { // Retas da direita para a esquerda, de cima para baixo					
+					do {
+						buffer.setRGB((int) Math.round(x) + 300, -(int) Math.round(y) + 300, Color.BLACK.getRGB());
+						x -= xinc;
+						y -= yinc;
+					} while (x >= x2 && y >= y2);
+
+				}
+	
+			}
+
+			repaint();
+
+		} catch (Exception e) {
+
 			JOptionPane.showMessageDialog(null, "Ocorreu um erro ao desenhar a reta!");
 		}
-		
+
 	}
-	
 	
 	public int getXX(){
 		return coordeX;
@@ -199,6 +161,7 @@ public class PainelDoBuffer extends JPanel {
 	public int getYY(){
 		return coordeY;
 	}
+
 	public void setXX(int coordeX){
 		this.coordeX = coordeX ;
 	}
