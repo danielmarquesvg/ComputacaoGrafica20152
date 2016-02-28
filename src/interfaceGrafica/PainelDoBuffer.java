@@ -85,39 +85,132 @@ public class PainelDoBuffer extends JPanel {
 	}
 
 	public void plotarRetaPontoMedio(int x1, int y1, int x2, int y2) {
-		int dx, dy, x, y, p, twoDy, twoDyMinusDx;
+		int deltaX, deltaY, x, y, p, twoDy, twoDyMinusDx;
+		deltaX = Math.abs(x2 - x1);
+		deltaY = Math.abs(y2 - y1);
+
 		try {
-			dx = Math.abs(x2 - x1);
-			dy = Math.abs(y2 - y1);
 
-			p = 2 * dy - dx; /* Valor inicial de d */
-			twoDy = 2 * dy; /* Incremento de E */
-			twoDyMinusDx = 2 * (dy - dx); /* Incremento de NE */
+			// Reta de 0 ate 90 graus || Reta de 180 ate 270 graus
+			if ((x1 < x2 && y1 < y2) || (x1 > x2 && y1 > y2)) {
+				// Reta de 0 ate 45 graus
+				System.out.println("Reta de 0 ate 45 graus com " + "X1 = " + x1 + ", Y1 = " + y1 + ", X2 = " + x2 + ", Y2 = " + y2);
+				if (deltaX > deltaY) {
+					p = 2 * deltaY - deltaX;
+					twoDy = 2 * deltaY;
+					twoDyMinusDx = 2 * (deltaY - deltaX);
 
-			if (x1 > x2) {
-				x = x2;
-				y = y2;
-				x2 = x1;
-			} else {
-				x = x1;
-				y = y1;
-			}
+					if (x1 > x2) {
+						x = x2;
+						y = y2;
+						x2 = x1;
+					} else {
+						x = x1;
+						y = y1;
+					}
 
-			do {
-				buffer.setRGB(x + 300, -y + 300, Color.BLACK.getRGB());
-				x++;
-				if (p < 0) {
-					p += twoDy;
+					do {
+						buffer.setRGB(x + 300, -y + 300, Color.BLACK.getRGB());
+						x++;
+						if (p < 0) {
+							p += twoDy;
+						} else {
+							y++;
+							p += twoDyMinusDx;
+						}
+					} while (x < x2);
+
+					// Reta de 45 ate 90 graus
+					System.out.println("Reta de 45 ate 90 graus com " + "X1 = " + x1 + ", Y1 = " + y1 + ", X2 = " + x2 + ", Y2 = " + y2);
 				} else {
-					y++;
-					p += twoDyMinusDx;
+					p = 2 * deltaX - deltaY;
+					twoDy = 2 * deltaX;
+					twoDyMinusDx = 2 * (deltaX - deltaY);
+
+					if (y1 > y2) {
+						x = x2;
+						y = y2;
+						y2 = y1;
+					} else {
+						x = x1;
+						y = y1;
+					}
+
+					do {
+						buffer.setRGB(x + 300, -y + 300, Color.BLACK.getRGB());
+						y++;
+						if (p < 0) {
+							p += twoDy;
+						} else {
+							x++;
+							p += twoDyMinusDx;
+						}
+					} while (y < y2);
+
 				}
-			} while (x < x2);
+
+				// Reta de 90 ate 180 graus || Reta de 270 ate 360 graus
+			} else {
+				// Reta de 135 ate 180 graus
+				System.out.println("Reta de 135 ate 180 graus com " + "X1 = " + x1 + ", Y1 = " + y1 + ", X2 = " + x2 + ", Y2 = " + y2);
+				if (deltaX > deltaY) {
+					p = 2 * deltaY - deltaX;
+					twoDy = 2 * deltaY;
+					twoDyMinusDx = 2 * (deltaY - deltaX);
+
+					if (x1 > x2) {
+						x = x2;
+						y = y2;
+						x2 = x1;
+					} else {
+						x = x1;
+						y = y1;
+					}
+
+					do {
+						buffer.setRGB(x + 300, -y + 300, Color.BLACK.getRGB());
+						x++;
+						if (p < 0) {
+							p += twoDy;
+						} else {
+							y--;
+							p += twoDyMinusDx;
+						}
+					} while (x < x2);
+
+					// Reta de 90 ate 135 graus
+					System.out.println("Reta de 90 ate 135 graus com " + "X1 = " + x1 + ", Y1 = " + y1 + ", X2 = " + x2 + ", Y2 = " + y2);
+				} else {
+					p = 2 * deltaX - deltaY;
+					twoDy = 2 * deltaX;
+					twoDyMinusDx = 2 * (deltaX - deltaY);
+
+					if (y1 < y2) {
+						x = x2;
+						y = y2;
+						y2 = y1;
+					} else {
+						x = x1;
+						y = y1;
+					}
+
+					do {
+						buffer.setRGB(x + 300, -y + 300, Color.BLACK.getRGB());
+						y--;
+						if (p < 0) {
+							p += twoDy;
+						} else {
+							x++;
+							p += twoDyMinusDx;
+						}
+					} while (y > y2);
+				}
+			}
 
 			repaint();
 
 		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Ocorreu um erro ao desenhar a reta!");
+			JOptionPane.showMessageDialog(null, "Ocorreu um erro ao desenhar a reta com " + "X1 = " + x1 + ", Y1 = " + y1 + ", X2 = " + x2 + ", Y2 = " + y2);
 		}
 	}
 
@@ -162,8 +255,7 @@ public class PainelDoBuffer extends JPanel {
 
 			} else {
 
-				if (y1 < y2) { // Retas da direita para a esquerda, de baixo
-								// para cima
+				if (y1 < y2) { // Retas da direita para a esquerda, de baixo para cima
 					do {
 						buffer.setRGB((int) Math.round(x) + 300, -(int) Math.round(y) + 300, Color.BLACK.getRGB());
 						x -= xinc;
