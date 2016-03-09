@@ -115,7 +115,24 @@ public class PanelComputacaoGrafica extends JPanel {
 		botaoPaginaInicial.setContentAreaFilled(false);
 		botaoPaginaInicial.setBorderPainted(true);
 		
+		JButton botaoCircun = new JButton("Circunferencia");
+		botaoCircun.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				PainelCircunferencia painelCircun = new PainelCircunferencia();
+				TelaInicial.contentPane.removeAll();
+				TelaInicial.contentPane.add(painelCircun);
+				TelaInicial.contentPane.validate();
+				TelaInicial.contentPane.repaint();
+				
+			}
+		});
+		botaoCircun.setForeground(Color.WHITE);
+		botaoCircun.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoCircun.setBackground(new Color(0, 139, 139));
+		botaoCircun.setBounds(751, 76, 227, 112);
+		add(botaoCircun);
+		
 
 	}
-
 }

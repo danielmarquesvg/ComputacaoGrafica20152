@@ -124,7 +124,7 @@ public class PanelNormalizacao extends JPanel {
 		JLabel labelPlotarX = new JLabel("X:");
 		labelPlotarX.setForeground(new Color(0, 102, 102));
 		labelPlotarX.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
-		labelPlotarX.setBounds(14, 481, 25, 28);
+		labelPlotarX.setBounds(10, 481, 25, 28);
 		add(labelPlotarX);
 		
 		JLabel labelPlotarY = new JLabel("Y:");
