@@ -319,6 +319,7 @@ public class PainelDoBuffer extends JPanel {
 			//write_pixel(-y, -x, color);
 			buffer.setRGB(-y + 300, x + 300, Color.BLACK.getRGB());
 			
+			
 			repaint();
 			
 			
