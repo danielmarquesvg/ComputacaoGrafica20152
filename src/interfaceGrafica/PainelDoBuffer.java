@@ -47,6 +47,8 @@ public class PainelDoBuffer extends JPanel {
 				buffer.setRGB(i, j, Color.WHITE.getRGB());
 			}
 		}
+		
+		desenharRetasPlano();
 		repaint();
 
 	}
@@ -282,89 +284,6 @@ public class PainelDoBuffer extends JPanel {
 
 	}
 	
-	public void plotarCircunferencia(int x1, int y1, int x2, int y2){
-		
-			int dx, dy, incE, incNE, d, x, y;
-
-			dx = x2 - x1;
-			dy = y2 - y1;
-			d = 2 * dy - dx; /* Valor inicial de d */
-			incE = 2 * dy; /* Incremento de E */
-			incNE = 2 * (dy - dx); /* Incremento de NE */
-			x = x1;
-			y = y1;
-
-			System.out.println("dx,dy,d,incE,incNE,x,y: "+ dx+" "+dy+" "+d+" "+incE+" "+incNE+" "+x+" "+y);
-			//write_pixel( x, y, color);
-			buffer.setRGB(x + 300, -y + 300, Color.BLACK.getRGB());
-			
-			//write_pixel( x, -y, color);
-			buffer.setRGB(x + 300, +y + 300, Color.BLACK.getRGB());
-			
-			//write_pixel(-x, y, color);
-			buffer.setRGB(-x + 300, -y + 300, Color.BLACK.getRGB());
-			
-			//write_pixel(-x, -y, color);
-			buffer.setRGB(-x + 300, +y + 300, Color.BLACK.getRGB());
-			
-			//write_pixel( y, x, color);
-			buffer.setRGB(y + 300, -x + 300, Color.BLACK.getRGB());
-			
-			//write_pixel( y, -x, color);
-			buffer.setRGB(y + 300, x + 300, Color.BLACK.getRGB());
-			
-			//write_pixel(-y, x, color);
-			buffer.setRGB(-y + 300, -x + 300, Color.BLACK.getRGB());
-			
-			//write_pixel(-y, -x, color);
-			buffer.setRGB(-y + 300, x + 300, Color.BLACK.getRGB());
-			
-			
-			repaint();
-			
-			
-			while (x < x2){
-				
-				if (d <= 0){
-					/* Escolhe E */
-					d = d + incE;
-					x = x + 1;
-				}else{
-					/* Escolhe NE */
-					d = d + incNE;
-					x = x + 1;
-					y = y + 1;
-				}/* end if */
-
-				//write_pixel( x, y, color);
-				buffer.setRGB(x + 300, -y + 300, Color.BLACK.getRGB());
-				
-				//write_pixel( x, -y, color);
-				buffer.setRGB(x + 300, +y + 300, Color.BLACK.getRGB());
-				
-				//write_pixel(-x, y, color);
-				buffer.setRGB(-x + 300, -y + 300, Color.BLACK.getRGB());
-				
-				//write_pixel(-x, -y, color);
-				buffer.setRGB(-x + 300, +y + 300, Color.BLACK.getRGB());
-				
-				//write_pixel( y, x, color);
-				buffer.setRGB(y + 300, -x + 300, Color.BLACK.getRGB());
-				
-				//write_pixel( y, -x, color);
-				buffer.setRGB(y + 300, x + 300, Color.BLACK.getRGB());
-				
-				//write_pixel(-y, x, color);
-				buffer.setRGB(-y + 300, -x + 300, Color.BLACK.getRGB());
-				
-				//write_pixel(-y, -x, color);
-				buffer.setRGB(-y + 300, x + 300, Color.BLACK.getRGB());
-				repaint();
-			}/* end while */
-
-		
-	}
-
 	public int getXX() {
 		return coordeX;
 	}

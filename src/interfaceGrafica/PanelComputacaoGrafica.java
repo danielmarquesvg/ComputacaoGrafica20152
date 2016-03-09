@@ -129,7 +129,7 @@ public class PanelComputacaoGrafica extends JPanel {
 		});
 		botaoCircun.setForeground(Color.WHITE);
 		botaoCircun.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
-		botaoCircun.setBackground(new Color(0, 139, 139));
+		botaoCircun.setBackground(new Color(0, 102, 204));
 		botaoCircun.setBounds(751, 76, 227, 112);
 		add(botaoCircun);
 		
