@@ -60,6 +60,17 @@ public class PanelInicial extends JPanel {
 		add(textPaneComputacaoGrafica);
 		
 		JButton botaoProcessamentoDeImagens = new JButton("Processamento de Imagens");
+		botaoProcessamentoDeImagens.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent eventoDeCliqueDeMouse) {
+				
+				PanelProcessamentoDeImagens panelProcessamentoDeImagens = new PanelProcessamentoDeImagens();
+				TelaInicial.contentPane.removeAll();
+				TelaInicial.contentPane.add(panelProcessamentoDeImagens);
+				TelaInicial.contentPane.validate();
+				TelaInicial.contentPane.repaint();
+				
+			}
+		});
 		botaoProcessamentoDeImagens.setForeground(Color.WHITE);
 		botaoProcessamentoDeImagens.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
 		botaoProcessamentoDeImagens.setBackground(new Color(0, 102, 102));
