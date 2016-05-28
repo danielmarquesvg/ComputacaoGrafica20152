@@ -1,4 +1,4 @@
-package interfaceGrafica;
+package interfaceGrafica.buffer;
 
 import java.awt.image.BufferedImage;
 
@@ -15,7 +15,7 @@ public class PainelDoBuffer extends JPanel {
 	int coordeX, coordeY;
 	double xincAtual, yincAtual;
 
-	BufferedImage buffer = new BufferedImage(600, 600, BufferedImage.TYPE_INT_RGB);
+	public BufferedImage buffer = new BufferedImage(600, 600, BufferedImage.TYPE_INT_RGB);
 
 	public PainelDoBuffer() {
 

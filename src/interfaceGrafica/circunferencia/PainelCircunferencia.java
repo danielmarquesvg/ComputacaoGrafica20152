@@ -1,4 +1,4 @@
-package interfaceGrafica;
+package interfaceGrafica.circunferencia;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 import algoritmos.Circunferencia;
+import interfaceGrafica.buffer.PainelDoBuffer;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;

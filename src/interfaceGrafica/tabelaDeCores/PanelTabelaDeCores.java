@@ -1,4 +1,4 @@
-package interfaceGrafica;
+package interfaceGrafica.tabelaDeCores;
 
 import java.awt.Color;
 import java.awt.FlowLayout;
@@ -17,6 +17,9 @@ import javax.swing.BoxLayout;
 import javax.swing.JTextField;
 
 import funcoes.Funcoes;
+import interfaceGrafica.telaPrincipal.PanelComputacaoGrafica;
+import interfaceGrafica.telaPrincipal.PanelInicial;
+import interfaceGrafica.telaPrincipal.TelaInicial;
 
 
 public class PanelTabelaDeCores extends JPanel {

@@ -1,22 +1,25 @@
-package interfaceGrafica;
+package interfaceGrafica.telaPrincipal;
 
 import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import interfaceGrafica.circunferencia.PainelCircunferencia;
+
 import javax.swing.JButton;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.ImageIcon;
 
-public class PanelComputacaoGrafica extends JPanel {
+public class PanelProcessamentoDeImagens extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public PanelComputacaoGrafica() {
+	public PanelProcessamentoDeImagens() {
 		
 		setBackground(Color.WHITE);
 		
@@ -24,15 +27,15 @@ public class PanelComputacaoGrafica extends JPanel {
 		setLayout(null);
 		
 		JPanel panelCabecalho = new JPanel();
-		panelCabecalho.setBackground(new Color(102, 102, 102));
+		panelCabecalho.setBackground(new Color(0, 153, 153));
 		panelCabecalho.setBounds(0, 0, 1024, 42);
 		add(panelCabecalho);
 		panelCabecalho.setLayout(null);
 		
-		JLabel labelTituloDoCabecalho = new JLabel("Projeto de Computação Gráfica");
+		JLabel labelTituloDoCabecalho = new JLabel("Projeto de Processamento de Imagens");
 		labelTituloDoCabecalho.setForeground(Color.WHITE);
 		labelTituloDoCabecalho.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 18));
-		labelTituloDoCabecalho.setBounds(10, 11, 273, 27);
+		labelTituloDoCabecalho.setBounds(10, 11, 350, 27);
 		panelCabecalho.add(labelTituloDoCabecalho);
 		
 		
@@ -41,48 +44,30 @@ public class PanelComputacaoGrafica extends JPanel {
 		botaoNormalizacao.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent eventoDeCliqueDeMouse) {
 				
-				PanelNormalizacao panelNormalizacao = new PanelNormalizacao();
-				TelaInicial.contentPane.removeAll();
-				TelaInicial.contentPane.add(panelNormalizacao);
-				TelaInicial.contentPane.validate();
-				TelaInicial.contentPane.repaint();
-				
 			}
 		});
 		botaoNormalizacao.setBackground(new Color(0, 102, 102));
 		botaoNormalizacao.setForeground(Color.WHITE);
-		botaoNormalizacao.setBounds(277, 76, 227, 112);
+		botaoNormalizacao.setBounds(365, 235, 227, 112);
 		botaoNormalizacao.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
 		add(botaoNormalizacao);
 		
-		JButton botaoTabelaDeCores = new JButton("Tabela de Cores");
-		botaoTabelaDeCores.addActionListener(new ActionListener() {
+		JButton botaoOperadoresLogicosAritmeticos = new JButton("Operadores Lógicos e Aritméticos");
+		botaoOperadoresLogicosAritmeticos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent eventoDeCliqueDeMouse) {
-				
-				PanelTabelaDeCores panelTabelaDeCores = new PanelTabelaDeCores();
-				TelaInicial.contentPane.removeAll();
-				TelaInicial.contentPane.add(panelTabelaDeCores);
-				TelaInicial.contentPane.validate();
-				TelaInicial.contentPane.repaint();
-				
 				
 			}
 		});
-		botaoTabelaDeCores.setForeground(Color.WHITE);
-		botaoTabelaDeCores.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
-		botaoTabelaDeCores.setBackground(new Color(0, 102, 51));
-		botaoTabelaDeCores.setBounds(40, 76, 227, 112);
-		add(botaoTabelaDeCores);
+		botaoOperadoresLogicosAritmeticos.setForeground(Color.WHITE);
+		botaoOperadoresLogicosAritmeticos.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoOperadoresLogicosAritmeticos.setBackground(new Color(0, 102, 51));
+		botaoOperadoresLogicosAritmeticos.setBounds(39, 76, 315, 112);
+		add(botaoOperadoresLogicosAritmeticos);
 		
 		JButton botaoReta = new JButton("Reta");
 		botaoReta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent eventoDeCliqueDeMouse) {
 				
-				PanelReta panelReta = new PanelReta();
-				TelaInicial.contentPane.removeAll();
-				TelaInicial.contentPane.add(panelReta);
-				TelaInicial.contentPane.validate();
-				TelaInicial.contentPane.repaint();
 			}
 		});
 		botaoReta.setForeground(Color.WHITE);
@@ -115,8 +100,8 @@ public class PanelComputacaoGrafica extends JPanel {
 		botaoPaginaInicial.setContentAreaFilled(false);
 		botaoPaginaInicial.setBorderPainted(true);
 		
-		JButton botaoCircun = new JButton("Circunferencia");
-		botaoCircun.addActionListener(new ActionListener() {
+		JButton botaoCircunferencia = new JButton("Circunferencia");
+		botaoCircunferencia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				PainelCircunferencia painelCircun = new PainelCircunferencia();
@@ -127,11 +112,11 @@ public class PanelComputacaoGrafica extends JPanel {
 				
 			}
 		});
-		botaoCircun.setForeground(Color.WHITE);
-		botaoCircun.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
-		botaoCircun.setBackground(new Color(0, 102, 204));
-		botaoCircun.setBounds(751, 76, 227, 112);
-		add(botaoCircun);
+		botaoCircunferencia.setForeground(Color.WHITE);
+		botaoCircunferencia.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		botaoCircunferencia.setBackground(new Color(0, 102, 204));
+		botaoCircunferencia.setBounds(751, 76, 227, 112);
+		add(botaoCircunferencia);
 		
 
 	}

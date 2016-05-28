@@ -1,4 +1,4 @@
-package interfaceGrafica;
+package interfaceGrafica.telaPrincipal;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;

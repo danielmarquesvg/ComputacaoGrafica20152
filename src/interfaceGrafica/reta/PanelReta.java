@@ -1,4 +1,4 @@
-package interfaceGrafica;
+package interfaceGrafica.reta;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -17,6 +17,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import funcoes.Reta;
+import interfaceGrafica.buffer.PainelDoBuffer;
+import interfaceGrafica.telaPrincipal.PanelComputacaoGrafica;
+import interfaceGrafica.telaPrincipal.PanelInicial;
+import interfaceGrafica.telaPrincipal.TelaInicial;
 
 @SuppressWarnings("serial")
 public class PanelReta extends JPanel {

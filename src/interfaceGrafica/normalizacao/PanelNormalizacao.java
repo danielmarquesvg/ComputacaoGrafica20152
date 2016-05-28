@@ -1,4 +1,4 @@
-package interfaceGrafica;
+package interfaceGrafica.normalizacao;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -18,6 +18,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+
+import interfaceGrafica.buffer.PainelDoBuffer;
+import interfaceGrafica.telaPrincipal.PanelComputacaoGrafica;
+import interfaceGrafica.telaPrincipal.PanelInicial;
+import interfaceGrafica.telaPrincipal.TelaInicial;
 
 public class PanelNormalizacao extends JPanel {
 
