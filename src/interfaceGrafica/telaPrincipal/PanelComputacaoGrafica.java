@@ -502,7 +502,7 @@ public class PanelComputacaoGrafica extends JPanel {
 		mntmDoc.setMaximumSize(new Dimension(150, 100));
 		barraDeMenu.add(mntmDoc);
 		
-		JMenu mnExerccio = new JMenu("ExercÃ­cio");
+		JMenu mnExerccio = new JMenu("Exercício");
 		mnExerccio.setMargin(new Insets(0, 5, 0, 0));
 		mnExerccio.setMaximumSize(new Dimension(120, 120));
 		barraDeMenu.add(mnExerccio);
@@ -526,7 +526,7 @@ public class PanelComputacaoGrafica extends JPanel {
 		});
 		mntmSistemaSolar.setMaximumSize(new Dimension(250, 120));
 		
-		JMenuItem mntmRotaoEmUma = new JMenuItem("RotaÃ§Ã£o em uma reta");
+		JMenuItem mntmRotaoEmUma = new JMenuItem("Rotação em uma reta");
 		mntmRotaoEmUma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ReflexaoReta();
