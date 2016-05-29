@@ -6,6 +6,9 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JTextPane;
+
+import com.uepb.view.TelaPrincipal;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -41,6 +44,12 @@ public class PanelInicial extends JPanel {
 				TelaInicial.contentPane.add(panelComputacaoGrafica);
 				TelaInicial.contentPane.validate();
 				TelaInicial.contentPane.repaint();
+				TelaInicial.frame.setVisible(false);
+				
+				TelaPrincipal tela = new TelaPrincipal();
+				tela.setVisible(true);
+				
+				
 				
 			}
 		});

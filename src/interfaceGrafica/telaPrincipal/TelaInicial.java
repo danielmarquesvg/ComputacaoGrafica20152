@@ -10,6 +10,7 @@ public class TelaInicial extends JFrame {
 
 	public static JPanel contentPane;
 	PanelInicial panelInicial = new PanelInicial();
+	static TelaInicial frame = new TelaInicial();
 
 	/**
 	 * Launch the application.
@@ -18,7 +19,7 @@ public class TelaInicial extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaInicial frame = new TelaInicial();
+					
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();

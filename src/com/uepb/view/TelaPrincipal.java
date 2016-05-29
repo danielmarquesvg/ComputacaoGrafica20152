@@ -43,6 +43,9 @@ import com.uepb.view.cisalhamento.ValoresCisalhamento;
 import com.uepb.view.cisalhamento.ValoresCisalhamento3D;
 import com.uepb.view.rotacao.ValoresRotacao;
 import com.uepb.view.rotacao.ValoresRotacao3D;
+
+import interfaceGrafica.telaPrincipal.TelaInicial;
+
 import java.awt.Insets;
 
 /**
@@ -97,7 +100,7 @@ public class TelaPrincipal extends JFrame {
 	 * Interface principal.
 	 */
 	public TelaPrincipal() {
-		setTitle("Computa\u00E7\u00E3o gr\u00E1fica - 2015");
+		setTitle("Computação gráfica - 2015");
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(1024, 720);
@@ -125,6 +128,10 @@ public class TelaPrincipal extends JFrame {
 				getContentPane().add(panelNormalizacao);
 				validate();
 				repaint();
+				//this.setVisible(true);
+				
+				TelaInicial tela = new TelaInicial();
+				tela.setVisible(true);
 
 			}
 		});
@@ -156,7 +163,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnRetas.add(mntmDda);
 
-		JMenuItem mntmPontoMdio = new JMenuItem("Ponto m\u00E9dio");
+		JMenuItem mntmPontoMdio = new JMenuItem("Ponto médio");
 		mntmPontoMdio.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Retas("pm");
@@ -175,7 +182,7 @@ public class TelaPrincipal extends JFrame {
 		mnCircunferencia.add(mntmPontoMedio);
 
 		JMenuItem mntmEquaoExplicita = new JMenuItem(
-				"Equa\u00E7\u00E3o explicita");
+				"Equaçãoo explicita");
 		mntmEquaoExplicita.setToolTipText("Ctrl + e");
 		mntmEquaoExplicita.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -234,7 +241,7 @@ public class TelaPrincipal extends JFrame {
 		menuCoordenadas.add(mntmElipse);
 		menuCoordenadas.add(mntmCubo);
 
-		JMenu mnTransformaes = new JMenu("Transforma\u00E7\u00F5es");
+		JMenu mnTransformaes = new JMenu("Transformações");
 		mnTransformaes.setMargin(new Insets(0, 5, 0, 0));
 		barraDeMenu.add(mnTransformaes);
 
@@ -267,13 +274,13 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnd2D.add(mntmEscala2D);
 
-		mntmRotacao2D = new JMenuItem("Rota\u00E7\u00E3o");
+		mntmRotacao2D = new JMenuItem("Rotação");
 		mntmRotacao2D.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (getLista().isEmpty()) {
-					JOptionPane.showMessageDialog(null, "Imagem n\u00E3o criada.");
+					JOptionPane.showMessageDialog(null, "Imagem não criada.");
 				} else {
 					new ValoresRotacao();
 					repaint();
@@ -283,10 +290,10 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnd2D.add(mntmRotacao2D);
 
-		JMenu mnReflexao = new JMenu("Reflex\u00E3o");
+		JMenu mnReflexao = new JMenu("Reflexão");
 		mnd2D.add(mnReflexao);
 
-		mntmReflexaoEmX2D = new JMenuItem("Reflex\u00E3o em X");
+		mntmReflexaoEmX2D = new JMenuItem("Reflexão em X");
 		mntmReflexaoEmX2D.addActionListener(new ActionListener() {
 
 			public void actionPerformed(ActionEvent e) {
@@ -300,7 +307,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnReflexao.add(mntmReflexaoEmX2D);
 
-		mntmReflexaoEmY2D = new JMenuItem("Reflex\u00E3o em Y");
+		mntmReflexaoEmY2D = new JMenuItem("Reflexão em Y");
 		mntmReflexaoEmY2D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				List<Ponto> lista = getLista();
@@ -315,7 +322,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnReflexao.add(mntmReflexaoEmY2D);
 
-		mntmReflexaoEmXeY2D = new JMenuItem("Reflex\u00E3o em X e Y");
+		mntmReflexaoEmXeY2D = new JMenuItem("Reflexão em X e Y");
 		mntmReflexaoEmXeY2D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				List<Ponto> lista = getLista();
@@ -330,7 +337,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnReflexao.add(mntmReflexaoEmXeY2D);
 
-		mntmTranslacao2D = new JMenuItem("Transla\u00E7\u00E3o");
+		mntmTranslacao2D = new JMenuItem("Translação");
 		mntmTranslacao2D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new TranslacaoInterface();
@@ -380,11 +387,11 @@ public class TelaPrincipal extends JFrame {
 
 		mnd3D.add(mntmEscala3D);
 
-		JMenu mnRotao = new JMenu("Rota\u00E7\u00E3o");
+		JMenu mnRotao = new JMenu("Rotação");
 		mnd3D.add(mnRotao);
 
 		JMenuItem mntmRotacaoEmX3D = new JMenuItem(
-				"Rota\u00E7\u00E3o em torno de X");
+				"Rotação em torno de X");
 		mntmRotacaoEmX3D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ValoresRotacao3D("x");
@@ -393,7 +400,7 @@ public class TelaPrincipal extends JFrame {
 		mnRotao.add(mntmRotacaoEmX3D);
 
 		JMenuItem mntmRotaoEmY3D = new JMenuItem(
-				"Rota\u00E7\u00E3o em torno de Y");
+				"Rotação em torno de Y");
 		mntmRotaoEmY3D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ValoresRotacao3D("y");
@@ -402,7 +409,7 @@ public class TelaPrincipal extends JFrame {
 		mnRotao.add(mntmRotaoEmY3D);
 
 		JMenuItem mntmRotaoEmZ3D = new JMenuItem(
-				"Rota\u00E7\u00E3o em torno de Z");
+				"Rotação em torno de Z");
 		mntmRotaoEmZ3D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ValoresRotacao3D("z");
@@ -410,10 +417,10 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnRotao.add(mntmRotaoEmZ3D);
 
-		JMenu mnReflexao3d = new JMenu("Reflex\u00E3o");
+		JMenu mnReflexao3d = new JMenu("Reflexão");
 		mnd3D.add(mnReflexao3d);
 
-		JMenuItem mntmReflexaoXY3D = new JMenuItem("Reflex\u00E3o em XY");
+		JMenuItem mntmReflexaoXY3D = new JMenuItem("Reflexão em XY");
 		mntmReflexaoXY3D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
@@ -430,7 +437,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnReflexao3d.add(mntmReflexaoXY3D);
 
-		JMenuItem mntmReflexaoEmYZ3D = new JMenuItem("Reflex\u00E3o em YZ");
+		JMenuItem mntmReflexaoEmYZ3D = new JMenuItem("Reflexão em YZ");
 		mntmReflexaoEmYZ3D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
@@ -463,7 +470,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnReflexao3d.add(mntmReflexaoEmYZ3D);
 
-		JMenuItem mntmReflexaoEmXZ3D = new JMenuItem("Reflex\u00E3o em XZ");
+		JMenuItem mntmReflexaoEmXZ3D = new JMenuItem("Reflexão em XZ");
 		mntmReflexaoEmXZ3D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
@@ -480,7 +487,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnReflexao3d.add(mntmReflexaoEmXZ3D);
 
-		JMenuItem mntmTranslao3D = new JMenuItem("Transla\u00E7\u00E3o");
+		JMenuItem mntmTranslao3D = new JMenuItem("Translação");
 		mntmTranslao3D.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Valores3D("translacao");
@@ -491,7 +498,7 @@ public class TelaPrincipal extends JFrame {
 		});
 		mnd3D.add(mntmTranslao3D);
 		
-		JMenuItem mntmDoc = new JMenuItem("Documenta\u00E7\u00E3o");
+		JMenuItem mntmDoc = new JMenuItem("Documentação");
 		mntmDoc.setMargin(new Insets(0, 5, 0, 0));
 		mntmDoc.setIcon(new ImageIcon(TelaPrincipal.class.getResource("/com/uepb/icon/logo-java.png")));
 		mntmDoc.addActionListener(new ActionListener() {
@@ -512,7 +519,7 @@ public class TelaPrincipal extends JFrame {
 		mntmDoc.setMaximumSize(new Dimension(150, 100));
 		barraDeMenu.add(mntmDoc);
 		
-		JMenu mnExerccio = new JMenu("ExercÃ­cio");
+		JMenu mnExerccio = new JMenu("Exercício");
 		mnExerccio.setMargin(new Insets(0, 5, 0, 0));
 		mnExerccio.setMaximumSize(new Dimension(120, 120));
 		barraDeMenu.add(mnExerccio);
@@ -531,12 +538,13 @@ public class TelaPrincipal extends JFrame {
 		mntmSistemaSolar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new SistemaSolar();
+				repaint();
 				
 			}
 		});
 		mntmSistemaSolar.setMaximumSize(new Dimension(250, 120));
 		
-		JMenuItem mntmRotaoEmUma = new JMenuItem("RotaÃ§Ã£o em uma reta");
+		JMenuItem mntmRotaoEmUma = new JMenuItem("Rotação em uma reta");
 		mntmRotaoEmUma.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new ReflexaoReta();

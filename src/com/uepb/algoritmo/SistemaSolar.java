@@ -97,7 +97,13 @@ public class SistemaSolar {
 					terra.circunferenciaPontoMedio();
 
 					TelaPrincipal.povoarRetas(terra.getListaPontos(), Color.BLUE);
+					
 					TelaPrincipal.panelNormalizacao.repaint();
+					//TelaPrincipal.panelNormalizacao.updateUI();
+					TelaPrincipal.panelNormalizacao.validate();
+					
+					
+	
 					try {
 						sleep(50);
 					} catch (InterruptedException e) {

@@ -24,14 +24,17 @@ public class PanelNormalizacao extends JPanel {
 	static JLabel labelNDCY;
 	static JLabel lblY;
 	static JLabel lblX;
+	
 	/**
 	 * Create the panel.
 	 */
+	
 	public PanelNormalizacao() {
 		setBackground(Color.DARK_GRAY);
 		
 		setBounds(0, 0, 1008, 660);
 		setLayout(null);
+		
 		panelPlanoCartesiano.addMouseMotionListener(new MouseMotionAdapter() {
 			@Override
 			public void mouseMoved(MouseEvent eventoDeMouse) {
@@ -130,6 +133,7 @@ public class PanelNormalizacao extends JPanel {
 		lblY.setBounds(10, 427, 348, 41);
 		add(lblY);
 		
-
+	
 	}
+
 }
