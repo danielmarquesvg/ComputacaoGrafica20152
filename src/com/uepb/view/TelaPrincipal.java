@@ -1,12 +1,26 @@
-package interfaceGrafica.telaPrincipal;
+/**
+ * @author Lucas
+ * Projeto de computação gráfica.
+ */
+package com.uepb.view;
 
 import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.Font;
-import java.awt.Insets;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
@@ -15,13 +29,6 @@ import com.uepb.algoritmo.SistemaSolar;
 import com.uepb.algoritmo.operacoes2D.Operacoes;
 import com.uepb.algoritmo.operacoes3d.Cubo3D;
 import com.uepb.algoritmo.operacoes3d.Ponto3D;
-import com.uepb.view.CohenSuterland;
-import com.uepb.view.Cubo;
-import com.uepb.view.PanelNormalizacao;
-import com.uepb.view.PanelPlanoCartesiano;
-import com.uepb.view.ReflexaoReta;
-import com.uepb.view.TelaPrincipal;
-import com.uepb.view.ValoresEscala3D;
 import com.uepb.view.basica.Ajuda;
 import com.uepb.view.basica.Elipse;
 import com.uepb.view.basica.EscalaInterface;
@@ -36,25 +43,18 @@ import com.uepb.view.cisalhamento.ValoresCisalhamento;
 import com.uepb.view.cisalhamento.ValoresCisalhamento3D;
 import com.uepb.view.rotacao.ValoresRotacao;
 import com.uepb.view.rotacao.ValoresRotacao3D;
-import com.uepb.view.PanelReta;
+import java.awt.Insets;
 
-import javax.swing.JButton;
+/**
+ * Classe com que executa o sistema. Possui todos os menus e localização destas definidas.
+ * 
+ * @author Lucas Miranda, Alcinael Fernandes e Daniel Marques
+ *
+ */
+@SuppressWarnings("serial")
+public class TelaPrincipal extends JFrame {
 
-import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.awt.event.ActionEvent;
-import javax.swing.ImageIcon;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-
-import java.awt.Dimension;
-
-public class PanelComputacaoGrafica extends JPanel {
-
+	
 	private JPanel contentPane;
 	/**
 	 * Itens definidos
@@ -73,31 +73,40 @@ public class PanelComputacaoGrafica extends JPanel {
 	/**
 	 * Lista de {@link Ponto} em 2D (duas dimensões)
 	 */
-	private static List<Ponto> listaGLOBAL = new ArrayList<Ponto>();
+	public static List<Ponto> listaGLOBAL = new ArrayList<Ponto>();
 	/**
 	 * Lista de {@link Ponto3D} em 3D (três dimensões).
 	 */
-	private static List<Ponto3D> listaGLOBAL3D = new ArrayList<Ponto3D>();
-	
-	
+	public static List<Ponto3D> listaGLOBAL3D = new ArrayList<Ponto3D>();
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					TelaPrincipal frame = new TelaPrincipal();
+					frame.setVisible(true);
+					frame.setResizable(false);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
 	/**
-	 * Create the panel.
+	 * Interface principal.
 	 */
-	public PanelComputacaoGrafica() {
-		
-		setBackground(Color.WHITE);
+	public TelaPrincipal() {
+		setTitle("Computa\u00E7\u00E3o gr\u00E1fica - 2015");
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(1024, 720);
-		setLayout(null);
-		
+		setLocationRelativeTo(null);
+
 		JMenuBar barraDeMenu = new JMenuBar();
 		barraDeMenu.setMaximumSize(new Dimension(2312, 1));
-		barraDeMenu.setBounds(0,0, 1000, 40);
-		add(barraDeMenu);
-		panelNormalizacao.setLocation(0, 38);
-		
+		setJMenuBar(barraDeMenu);
 
-		add(panelNormalizacao);
-		
 		JMenuItem mntmHome = new JMenuItem("Home");
 		mntmHome.setMaximumSize(new Dimension(80, 120));
 		mntmHome.setIgnoreRepaint(true);
@@ -108,18 +117,19 @@ public class PanelComputacaoGrafica extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				removeAll();
+				getContentPane().removeAll();
 				contentPane = new JPanel();
 				contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 				contentPane.setLayout(null);
-				contentPane.add(panelNormalizacao);
+				setContentPane(contentPane);
+				getContentPane().add(panelNormalizacao);
 				validate();
 				repaint();
 
 			}
 		});
 		barraDeMenu.add(mntmHome);
-		
+
 		JMenu menuCoordenadas = new JMenu("Desenhar");
 		menuCoordenadas.setMargin(new Insets(0, 5, 0, 0));
 		menuCoordenadas.setMaximumSize(new Dimension(100, 120));
@@ -129,7 +139,7 @@ public class PanelComputacaoGrafica extends JPanel {
 		mnCircunferencia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 
-				removeAll();
+				getContentPane().removeAll();
 				validate();
 				repaint();
 			}
@@ -559,9 +569,10 @@ public class PanelComputacaoGrafica extends JPanel {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
+		setContentPane(contentPane);
 		panelNormalizacao.setSize(1008, 660);
 
-		add(panelNormalizacao);
+		getContentPane().add(panelNormalizacao);
 		
 		
 	}
@@ -643,5 +654,4 @@ public class PanelComputacaoGrafica extends JPanel {
 	public static void setListaGLOBAL3D(List<Ponto3D> listaGLOBAL3D) {
 		TelaPrincipal.listaGLOBAL3D = listaGLOBAL3D;
 	}
-		
 }
