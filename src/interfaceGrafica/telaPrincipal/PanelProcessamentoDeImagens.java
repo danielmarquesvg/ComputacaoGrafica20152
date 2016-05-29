@@ -46,6 +46,18 @@ public class PanelProcessamentoDeImagens extends JPanel {
 		botaoPaginaInicial.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
 		panelOpcaoLateral.add(botaoPaginaInicial);
 		
+		botaoPaginaInicial.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent eventoDeMouse) {
+				
+				PanelInicial panelInicial = new PanelInicial();
+				TelaInicial.contentPane.removeAll();
+				TelaInicial.contentPane.add(panelInicial);
+				TelaInicial.contentPane.validate();
+				TelaInicial.contentPane.repaint();
+				
+			}
+		});
+		
 		JLabel lblImg = new JLabel("");
 		lblImg.setIcon(new ImageIcon(PanelInicial.class.getResource("/com/br/images/logo.jpg")));
 		lblImg.setBounds(0, 0, 194, 104);

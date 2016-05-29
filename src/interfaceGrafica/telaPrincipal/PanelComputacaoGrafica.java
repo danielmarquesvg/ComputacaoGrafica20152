@@ -104,10 +104,11 @@ public class PanelComputacaoGrafica extends JPanel {
 		mntmHome.setInheritsPopupMenu(true);
 		mntmHome.setIcon(new ImageIcon(TelaPrincipal.class
 				.getResource("/com/uepb/icon/home.png")));
-		mntmHome.addActionListener(new ActionListener() {
+		
+		/*mntmHome.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent arg0) {
 				removeAll();
 				contentPane = new JPanel();
 				contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -117,7 +118,21 @@ public class PanelComputacaoGrafica extends JPanel {
 				repaint();
 
 			}
+		});*/
+		
+		mntmHome.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent eventoDeMouse) {
+				
+				PanelInicial panelInicial = new PanelInicial();
+				TelaInicial.contentPane.removeAll();
+				TelaInicial.contentPane.add(panelInicial);
+				TelaInicial.contentPane.validate();
+				TelaInicial.contentPane.repaint();
+				
+			}
 		});
+		
+		
 		barraDeMenu.add(mntmHome);
 		
 		JMenu menuCoordenadas = new JMenu("Desenhar");
