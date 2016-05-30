@@ -3,7 +3,7 @@ package com.uepb.algoritmo.operacoes3d;
 /**
  * Ponto. Tem três valores. X, Y e Z
  * 
- * @author Lucas Miranda Dourado
+ * 
  *
  */
 public class Ponto3D {

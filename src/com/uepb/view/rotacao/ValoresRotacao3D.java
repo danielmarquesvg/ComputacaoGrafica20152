@@ -25,7 +25,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ValoresRotacao3D extends JDialog {
+public class ValoresRotacao3D extends JDialog {//Janela que obtem as informações para as rotações 3D
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
@@ -74,7 +74,7 @@ public class ValoresRotacao3D extends JDialog {
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		okButton.addActionListener(new ActionListener() {//Envia os dados do usuário para fazer a rotação com o algotimo
 			public void actionPerformed(ActionEvent arg0) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
 				int x = Integer.valueOf(txtRotacao.getText());

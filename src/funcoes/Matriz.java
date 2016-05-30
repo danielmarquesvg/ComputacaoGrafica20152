@@ -2,7 +2,7 @@ package funcoes;
 
 import java.util.ArrayList;
 
-public class Matriz {
+public class Matriz {//Classe com operações com matrizes
 
 	public void multiplicacaoMatrizes(ArrayList<ArrayList<Integer>> A, ArrayList<ArrayList<Integer>> B) {
 

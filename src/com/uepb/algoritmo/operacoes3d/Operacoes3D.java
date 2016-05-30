@@ -8,7 +8,7 @@ import com.uepb.algoritmo.Matriz;
 
 // 3D Composta
 public class Operacoes3D {
-
+//Classe referente as operações 3D
 	private int x, y;
 	Matriz matriz = new Matriz();
 	int dim = 4;

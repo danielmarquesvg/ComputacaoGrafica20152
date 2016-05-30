@@ -6,7 +6,7 @@ import java.util.List;
 import com.uepb.algoritmo.Ponto;
 
 public class RetasFuncoes {
-
+//Classe referente as retas
 	double lenght;
 	double X, Y, x_inc, y_inc;
 	double media = 0.0;
@@ -18,14 +18,14 @@ public class RetasFuncoes {
 	}
 
 	/**
-	 * Algoritmo do declive. Utiliza-se da equÃ§Ã£o fundamental da reta (y = mx+b)
+	 * Algoritmo do declive. Utiliza-se da equação fundamental da reta (y = mx+b)
 	 * 
 	 * @param x1
 	 * @param y1
 	 * @param x2
 	 * @param y2
 	 */
-	public List<Ponto> dda(int x1, int y1, int x2, int y2) {
+	public List<Ponto> dda(int x1, int y1, int x2, int y2) { //Reta DDA
 		lenght = Math.abs(x2 - x1);
 		media = (double) (Math.abs(y2 - y1)) / (double) (Math.abs(x2 - x1));
 
@@ -56,6 +56,7 @@ public class RetasFuncoes {
 		return listaDePontos;
 	}
 
+	//Os métodos a seguir são para imprimir as retas em todos os octantes
 	private void imprimirOitavoOctante(int x1, int y1, int x2, int y2) {
 		if (lenght <= Math.abs(y2 - y1)) {
 			lenght = Math.abs(y2 - y1);
@@ -249,7 +250,7 @@ public class RetasFuncoes {
 	 * @param x
 	 * @param y
 	 */
-	private void setPixel(double x, double y) {
+	private void setPixel(double x, double y) {//Método primordial, adiciona um pixel
 		listaDePontos
 				.add(new Ponto((int) Math.round(x), (int) Math.round(y), 0));
 		
@@ -284,7 +285,7 @@ public class RetasFuncoes {
 	 * @param x2
 	 * @param y2
 	 */
-	public List<Ponto> retaPontoMedio(int x, int y, int x2, int y2) {
+	public List<Ponto> retaPontoMedio(int x, int y, int x2, int y2) {//Ponto médio
 		int wigth = x2 - x;
 		int height = y2 - y;
 		int dx1 = 0, dy1 = 0, dx2 = 0, dy2 = 0;

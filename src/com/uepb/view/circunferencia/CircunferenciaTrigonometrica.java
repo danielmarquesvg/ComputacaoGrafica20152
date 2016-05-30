@@ -20,10 +20,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class CircunferenciaTrigonometrica extends JFrame {
+public class CircunferenciaTrigonometrica extends JFrame {//Janela que obtem as informações para criação da circunferencia
 	private JTextField txt_raio;
 
-	public CircunferenciaTrigonometrica() {
+	public CircunferenciaTrigonometrica() {//Será criado usando o algoritmo trigonométrico
 		setResizable(false);
 		setVisible(true);
 		setTitle("Circunferencia Ponto M\u00E9dio");

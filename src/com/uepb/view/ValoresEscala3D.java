@@ -22,7 +22,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class ValoresEscala3D extends JDialog {
+public class ValoresEscala3D extends JDialog {//Classe que abre uma janela e obtem os dados para realizar uma escala 3D
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
@@ -92,7 +92,7 @@ public class ValoresEscala3D extends JDialog {
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		okButton.addActionListener(new ActionListener() {//Evento que chama o algoritmo de escala
 			public void actionPerformed(ActionEvent arg0) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
 				

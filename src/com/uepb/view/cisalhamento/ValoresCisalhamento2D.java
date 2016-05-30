@@ -24,7 +24,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class ValoresCisalhamento2D extends JDialog {
+public class ValoresCisalhamento2D extends JDialog {//Janela que obtem as informações para cisalhamento em 2D
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();

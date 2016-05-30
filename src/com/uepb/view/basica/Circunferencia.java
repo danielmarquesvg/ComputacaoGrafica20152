@@ -9,10 +9,10 @@ import com.uepb.algoritmo.operacoes2D.Operacoes;
 
 /**
  * Algoritmo da {@link Circunferencia} do ponto medio.
- * @author Lucas Miranda
+ * 
  *
  */
-public class Circunferencia {
+public class Circunferencia {//Classe com os algoritmos de criação de circunferencia
 
 	int d_old = 0;
 	int x, y, raio, x_dif, y_dif;
@@ -29,7 +29,7 @@ public class Circunferencia {
 		this.raio = raio;
 	}
 
-	public ArrayList<Ponto> circunferenciaPontoMedio() {
+	public ArrayList<Ponto> circunferenciaPontoMedio() {//Método do ponto médio
 		listaPontos = new ArrayList<Ponto>();
 		boolean trans = false;
 		if(x!=0 || y!=0) {
@@ -67,7 +67,7 @@ public class Circunferencia {
 		return (ArrayList<Ponto>) listaPontos;
 	}
 
-	public List<Ponto> circ_explicita(int x, int y, int raio) {
+	public List<Ponto> circ_explicita(int x, int y, int raio) {//Método explicita
 		listaPontos = new ArrayList<Ponto>();
 		listaPontos.clear();
 		
@@ -79,7 +79,7 @@ public class Circunferencia {
 		return listaPontos;
 	}
 	
-	public List<Ponto> circ_trigonometrica(int x, int y, int raio){
+	public List<Ponto> circ_trigonometrica(int x, int y, int raio){//Método trigonométrico
 		listaPontos = new ArrayList<Ponto>();
 		listaPontos.clear();
 		

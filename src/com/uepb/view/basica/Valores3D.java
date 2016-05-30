@@ -25,7 +25,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class Valores3D extends JDialog {
+public class Valores3D extends JDialog {//Classe que obtem os valores 3D para translação
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
@@ -96,7 +96,7 @@ public class Valores3D extends JDialog {
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		okButton.addActionListener(new ActionListener() {//Evento que envia os dados para a translação
 			public void actionPerformed(ActionEvent arg0) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
 				

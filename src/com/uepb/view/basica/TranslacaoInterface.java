@@ -23,7 +23,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class TranslacaoInterface extends JDialog {
+public class TranslacaoInterface extends JDialog {//Classe de interface para obter os dados do usuário para realizar a translação
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
@@ -82,7 +82,7 @@ public class TranslacaoInterface extends JDialog {
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		okButton.addActionListener(new ActionListener() {//Evento que envia os dados para a translação
 			public void actionPerformed(ActionEvent arg0) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
 				

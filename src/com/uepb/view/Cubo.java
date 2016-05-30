@@ -23,7 +23,7 @@ import java.util.List;
 
 import javax.swing.SwingConstants;
 
-public class Cubo extends JDialog {
+public class Cubo extends JDialog {//Classe obtem os dados de um cubo
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
@@ -96,7 +96,7 @@ public class Cubo extends JDialog {
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		okButton.addActionListener(new ActionListener() {//Evento que enviar os dados do usuário para a classe que desenha
 			public void actionPerformed(ActionEvent arg0) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
 				

@@ -10,7 +10,7 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 
 @SuppressWarnings("serial")
-public class PainelDoBuffer extends JPanel {
+public class PainelDoBuffer extends JPanel {//Painel com o buffer, usado em um projeto anteior
 
 	int coordeX, coordeY;
 	double xincAtual, yincAtual;

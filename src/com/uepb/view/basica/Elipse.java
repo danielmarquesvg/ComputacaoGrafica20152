@@ -20,7 +20,7 @@ public class Elipse extends JFrame
 	private JTextField txtX;
 	private JTextField txtY;
 
-	public Elipse() {
+	public Elipse() {//janela que obtem os dados do usuário para desenhar uma elipse
 		setResizable(false);
 		setTitle("Elipse");
 		setVisible(true);
@@ -65,7 +65,7 @@ public class Elipse extends JFrame
 		getContentPane().add(btnCancelar);
 		
 		JButton btnOk = new JButton("Ok");
-		btnOk.addActionListener(new ActionListener() {
+		btnOk.addActionListener(new ActionListener() {//Evento que faz o desenho
 			public void actionPerformed(ActionEvent e) {
 				TelaPrincipal.planoCartesiano.limparImagem();
 				ElipseEquacao ee = new ElipseEquacao();

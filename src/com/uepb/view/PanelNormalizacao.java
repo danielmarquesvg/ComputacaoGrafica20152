@@ -11,9 +11,11 @@ import com.uepb.algoritmo.FuncoesDeNormalizacao;
 import java.awt.Font;
 import java.awt.event.MouseMotionAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.MatteBorder;
 
 @SuppressWarnings("serial")
-public class PanelNormalizacao extends JPanel {
+public class PanelNormalizacao extends JPanel {//O painel de toda a normalização
 
 	PanelPlanoCartesiano panelPlanoCartesiano = new PanelPlanoCartesiano();
 	FuncoesDeNormalizacao funcoesDeNormalizacao = new FuncoesDeNormalizacao();
@@ -30,12 +32,13 @@ public class PanelNormalizacao extends JPanel {
 	 */
 	
 	public PanelNormalizacao() {
-		setBackground(Color.DARK_GRAY);
+		setBackground(new Color(255, 255, 255));
 		
 		setBounds(0, 0, 1008, 660);
 		setLayout(null);
+		panelPlanoCartesiano.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		
-		panelPlanoCartesiano.addMouseMotionListener(new MouseMotionAdapter() {
+		panelPlanoCartesiano.addMouseMotionListener(new MouseMotionAdapter() {//Evento que mostra os dados normalizados no movimento do mouse
 			@Override
 			public void mouseMoved(MouseEvent eventoDeMouse) {
 				
@@ -62,7 +65,7 @@ public class PanelNormalizacao extends JPanel {
 		add(panelPlanoCartesiano);
 		
 		JPanel panelBackgroundCoordenadasDoDispositivo = new JPanel();
-		panelBackgroundCoordenadasDoDispositivo.setBackground(Color.GRAY);
+		panelBackgroundCoordenadasDoDispositivo.setBackground(new Color(0, 153, 255));
 		panelBackgroundCoordenadasDoDispositivo.setBounds(0, 30, 358, 41);
 		add(panelBackgroundCoordenadasDoDispositivo);
 		panelBackgroundCoordenadasDoDispositivo.setLayout(null);
@@ -74,20 +77,20 @@ public class PanelNormalizacao extends JPanel {
 		panelBackgroundCoordenadasDoDispositivo.add(labelCoordenadasDoDispositivo);
 		
 		labelDCX = new JLabel("dcx (x): ");
-		labelDCX.setForeground(Color.WHITE);
+		labelDCX.setForeground(Color.BLACK);
 		labelDCX.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		labelDCX.setBounds(10, 82, 348, 41);
 		add(labelDCX);
 		
 		labelDCY = new JLabel("dcy (y): ");
-		labelDCY.setForeground(Color.WHITE);
+		labelDCY.setForeground(Color.BLACK);
 		labelDCY.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		labelDCY.setBounds(10, 113, 348, 41);
 		add(labelDCY);
 		
 		JPanel panelBackgroundCoordenadasDoDispositivoNormalizada = new JPanel();
 		panelBackgroundCoordenadasDoDispositivoNormalizada.setLayout(null);
-		panelBackgroundCoordenadasDoDispositivoNormalizada.setBackground(Color.GRAY);
+		panelBackgroundCoordenadasDoDispositivoNormalizada.setBackground(new Color(0, 153, 255));
 		panelBackgroundCoordenadasDoDispositivoNormalizada.setBounds(0, 186, 358, 41);
 		add(panelBackgroundCoordenadasDoDispositivoNormalizada);
 		
@@ -98,20 +101,20 @@ public class PanelNormalizacao extends JPanel {
 		panelBackgroundCoordenadasDoDispositivoNormalizada.add(labelNormalizacaoDoDispositivo);
 		
 		labelNDCX = new JLabel("ndcx: ");
-		labelNDCX.setForeground(Color.WHITE);
+		labelNDCX.setForeground(Color.BLACK);
 		labelNDCX.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		labelNDCX.setBounds(10, 238, 348, 41);
 		add(labelNDCX);
 		
 		labelNDCY = new JLabel("ndcy: ");
-		labelNDCY.setForeground(Color.WHITE);
+		labelNDCY.setForeground(Color.BLACK);
 		labelNDCY.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		labelNDCY.setBounds(10, 270, 348, 41);
 		add(labelNDCY);
 		
 		JPanel panel = new JPanel();
 		panel.setLayout(null);
-		panel.setBackground(Color.GRAY);
+		panel.setBackground(new Color(0, 153, 255));
 		panel.setBounds(0, 343, 358, 41);
 		add(panel);
 		
@@ -122,13 +125,13 @@ public class PanelNormalizacao extends JPanel {
 		panel.add(lblCoordenadasDoDispositivo);
 		
 		lblX = new JLabel("x: ");
-		lblX.setForeground(Color.WHITE);
+		lblX.setForeground(Color.BLACK);
 		lblX.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		lblX.setBounds(10, 395, 348, 41);
 		add(lblX);
 		
 		lblY = new JLabel("y: ");
-		lblY.setForeground(Color.WHITE);
+		lblY.setForeground(Color.BLACK);
 		lblY.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		lblY.setBounds(10, 427, 348, 41);
 		add(lblY);

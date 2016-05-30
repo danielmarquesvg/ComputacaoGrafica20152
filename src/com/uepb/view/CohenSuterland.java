@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author Lucas
+ * 
  *
  */
-public class CohenSuterland extends JFrame{
+public class CohenSuterland extends JFrame{//Janela responsável por adquirir os pontos do usuário para realizar o corte
 	private JTextField txtX1;
 	private JTextField txtY1;
 	private JTextField txtX2;
@@ -95,7 +95,7 @@ public class CohenSuterland extends JFrame{
 		getContentPane().add(btnCancelar);
 		
 		JButton btnOk = new JButton("OK");
-		btnOk.addActionListener(new ActionListener() {
+		btnOk.addActionListener(new ActionListener() {//Algoritmo que faz o recorte
 			public void actionPerformed(ActionEvent e) {
 				Recorte recorte = new Recorte();
 				

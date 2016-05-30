@@ -1,7 +1,7 @@
 package interfaceGrafica.equalizarImagem;
 
 
-public class EqualizarImagem {
+public class EqualizarImagem {//Classe da equalização de imagens
 	
 	
 	public static int[][] equalizarImagem(int matrizDaImagemOriginal [][]){

@@ -19,7 +19,7 @@ import java.util.List;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PanelReta extends JPanel {
+public class PanelReta extends JPanel { //Painel que desenha a reta
 
 	private static final long serialVersionUID = 1L;
 	public static PanelPlanoCartesiano panelPlanoCartesiano = new PanelPlanoCartesiano();
@@ -133,7 +133,7 @@ public class PanelReta extends JPanel {
 
 		btnPontoMedio = new JButton("Ponto m\u00E9dio");
 		
-		btnPontoMedio.addActionListener(new ActionListener() {
+		btnPontoMedio.addActionListener(new ActionListener() {//Botão que chama o algoritmo de ponto médio
 			public void actionPerformed(ActionEvent arg0) {
 				TelaPrincipal.getLista().clear();
 				getRetas().retaPontoMedio(Integer.valueOf(txt_x1.getText()),
@@ -158,7 +158,7 @@ public class PanelReta extends JPanel {
 		add(btnPontoMedio);
 
 		btnDDA = new JButton("DDA");
-		btnDDA.addActionListener(new ActionListener() {
+		btnDDA.addActionListener(new ActionListener() {//Botão que chama o algoritmo DDa
 			public void actionPerformed(ActionEvent arg0) {
 				TelaPrincipal.setLista(getRetas().dda(Integer.valueOf(txt_x1.getText()),
 						Integer.valueOf(txt_y1.getText()),

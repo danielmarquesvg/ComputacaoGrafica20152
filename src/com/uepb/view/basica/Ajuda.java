@@ -15,7 +15,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Ajuda extends JDialog {
+public class Ajuda extends JDialog {//janela de informação
 
 	private final JPanel contentPanel = new JPanel();
 
@@ -38,7 +38,7 @@ public class Ajuda extends JDialog {
 		contentPanel.add(lblSobre);
 
 		JLabel lblProjetoDesenvolvidoPelos = new JLabel(
-				"<html>\r\n<head>\r\n\t<meta charset='UTF-8'>\r\n\t</head>\r\n<body>\r\n<h3 >UEPB</h3>\r\n<H4>Computa\u00E7\u00E3o Gr\u00E1fica</h4>\r\n<p>Projeto desenvolvido pelos alunos: Alcinael Fernandes, Daniel Marques e Lucas Miranda. \r\nProjeto da cadeira de Computa\u00E7\u00E3o gr\u00E1fica orientado pelo professor Robson Pequeno.</p>\r\n\r\n\r\n</body>\r\n</html>");
+				"<html>\r\n<head>\r\n\t<meta charset='UTF-8'>\r\n\t</head>\r\n<body>\r\n<h3 >UEPB</h3>\r\n<H4>Computa\u00E7\u00E3o Gr\u00E1fica</h4>\r\n<p>Projeto desenvolvido pelos alunos: Daniel Marques, Kawê Romero e Renoir. \r\nProjeto da cadeira de Computa\u00E7\u00E3o gr\u00E1fica orientado pelo professor Robson Pequeno.</p>\r\n\r\n\r\n</body>\r\n</html>");
 		lblProjetoDesenvolvidoPelos.setMaximumSize(new Dimension(838, 300));
 		lblProjetoDesenvolvidoPelos
 				.setHorizontalTextPosition(SwingConstants.LEFT);

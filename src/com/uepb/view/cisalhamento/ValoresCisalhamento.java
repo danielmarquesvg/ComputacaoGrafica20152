@@ -23,7 +23,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class ValoresCisalhamento extends JDialog {
+public class ValoresCisalhamento extends JDialog {//Janela que obtem as informações para cisalhamento
 
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();

@@ -7,7 +7,7 @@ public class FuncoesDeNormalizacao {
 	public static double dcx;
 	public static double dcy;
 	
-	
+	//Classe que também calcula a normalização, e deixa os valores para outras classes utilizarem
 	static public double calcularNDCX(int ndh, int dcx) {
 
 		double ndcx = (double) dcx / (ndh - 1);

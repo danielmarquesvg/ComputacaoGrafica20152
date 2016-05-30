@@ -49,9 +49,9 @@ import interfaceGrafica.telaPrincipal.TelaInicial;
 import java.awt.Insets;
 
 /**
- * Classe com que executa o sistema. Possui todos os menus e localizaÃ§Ã£o destas definidas.
+ * Classe com que executa o sistema. Possui todos os menus e localização destas definidas.
  * 
- * @author Lucas Miranda, Alcinael Fernandes e Daniel Marques
+ * 
  *
  */
 @SuppressWarnings("serial")

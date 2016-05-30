@@ -20,10 +20,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class CircunferenciaExplicita extends JFrame {
+public class CircunferenciaExplicita extends JFrame {//Janela que obtem as informações para criação da circunferencia
 	private JTextField txt_raio;
 
-	public CircunferenciaExplicita() {
+	public CircunferenciaExplicita() {//Será criado usando o algoritmo explicito
 		setResizable(false);
 		setVisible(true);
 		setTitle("Circunferencia - Explicita");

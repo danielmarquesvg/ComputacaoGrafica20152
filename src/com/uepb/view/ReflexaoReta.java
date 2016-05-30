@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class ReflexaoReta extends JFrame{
+public class ReflexaoReta extends JFrame{//Tela da reflexão da reta, obtem os dados do usuário
 	/**
 	 * 
 	 */
@@ -55,7 +55,7 @@ public class ReflexaoReta extends JFrame{
 		TelaPrincipal.panelNormalizacao.repaint();
 		
 		JButton btnOk = new JButton("Ok");
-		btnOk.addActionListener(new ActionListener() {
+		btnOk.addActionListener(new ActionListener() {//Evento que faz a operação
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {

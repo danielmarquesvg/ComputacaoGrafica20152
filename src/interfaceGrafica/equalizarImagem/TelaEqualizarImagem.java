@@ -31,7 +31,7 @@ import interfaceGrafica.transformacoes.TelaTransformacoes;
 import processarImagem.PanelDaImagem;
 import processarImagem.PanelDaImagemMatriz;
 
-public class TelaEqualizarImagem extends JPanel {
+public class TelaEqualizarImagem extends JPanel {//Tela onde mostra a imagem equalizada
 
 	private static final long serialVersionUID = 1L;
 

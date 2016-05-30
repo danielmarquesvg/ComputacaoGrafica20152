@@ -16,7 +16,7 @@ import interfaceGrafica.buffer.PainelDoBuffer;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class PainelCircunferencia extends JPanel {
+public class PainelCircunferencia extends JPanel {//Painel de um projeto mais obsoleto
 	
 	PainelDoBuffer painelBuffer = new PainelDoBuffer();
 	private JTextField textFieldRaioDaCircunferencia;

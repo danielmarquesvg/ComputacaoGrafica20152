@@ -2,7 +2,7 @@ package funcoes;
 
 import javax.xml.bind.ParseConversionEvent;
 
-public class Funcoes {
+public class Funcoes {//Classe com algumas funções para a tabela de corer
 	
 	public static String rgbParaHexadecimal(int red, int green, int blue){
 		

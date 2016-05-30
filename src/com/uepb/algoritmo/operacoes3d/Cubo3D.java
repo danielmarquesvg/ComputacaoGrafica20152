@@ -12,7 +12,7 @@ import com.uepb.view.basica.Retas;
  * Classe que define as matrizes de transformação do objeto (Translação, rotação, escala, cisalhamento e reflexão).
  * Também faz as operações.
  * 
- * @author Lucas Miranda Dourado
+ * 
  *
  */
 public class Cubo3D {
@@ -20,14 +20,14 @@ public class Cubo3D {
 	int x, y, z, w;
 
 	/**
-	 * Método construtor default. (Padrão)
+	 * Método construtor default. (Padr�o)
 	 */
 	public Cubo3D() {
 		// TODO Auto-generated constructor stub
 	}
 	
 	/**
-	 * Matriz de translação em um objeto em três dimensões.
+	 * Matriz de transla��o em um objeto em tres dimens�es.
 	 * @param tx
 	 * @param ty
 	 * @param tz
@@ -60,7 +60,7 @@ public class Cubo3D {
 	}
 
 	/**
-	 * Matriz de Escala em um objeto em três dimensões.
+	 * Matriz de Escala em um objeto em tres dimens�es.
 	 * 
 	 * @param sx
 	 * @param sy
@@ -106,7 +106,7 @@ public class Cubo3D {
 	}
 
 	/**
-	 * Matriz de Reflexão nos eixos X e Y em um objeto em três dimensões.
+	 * Matriz de Reflex�o nos eixos X e Y em um objeto em tres dimens�es.
 	 * @return
 	 */
 	private double[][] gerarMatrizReflexaoXY() {
@@ -142,7 +142,7 @@ public class Cubo3D {
 	}
 
 	/**
-	 * Matriz de Reflexão nos eixos Y e Z em um objeto em três dimensões.
+	 * Matriz de Reflex�o nos eixos Y e Z em um objeto em tres dimensoes.
 	 * @return
 	 */
 	private double[][] gerarMatrizReflexaoYZ() {

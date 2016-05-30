@@ -13,11 +13,11 @@ import com.uepb.algoritmo.Ponto;
  * @author Lucas Miranda
  *
  */
-public class ElipseEquacao {
+public class ElipseEquacao {//Classe responsável pela equação de uma elipse
 
-	List<Ponto> listaPontos;
+	List<Ponto> listaPontos;//Armazena os pontos de toda a elipse
 	
-	public void midpointElipse(int a, int b){
+	public void midpointElipse(int a, int b){//Método responsável pelo calculo da elipse
 		listaPontos = new ArrayList<Ponto>();
 		int x = 0;
 		int y = 0;

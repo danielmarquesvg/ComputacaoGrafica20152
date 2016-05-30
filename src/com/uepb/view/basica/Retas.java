@@ -19,7 +19,7 @@ import com.uepb.algoritmo.operacoes2D.RetasFuncoes;
 import com.uepb.view.PanelReta;
 import com.uepb.view.TelaPrincipal;
 
-public class Retas extends JDialog {
+public class Retas extends JDialog {//Classe que obtem as informações do usuário para criar uma reta
 
 	private static final long serialVersionUID = 1L;
 
@@ -94,7 +94,7 @@ public class Retas extends JDialog {
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		okButton.addActionListener(new ActionListener() {//Evento para criação das retas
 			public void actionPerformed(ActionEvent e) {
 				if (tipo.equals("dda")) {
 					

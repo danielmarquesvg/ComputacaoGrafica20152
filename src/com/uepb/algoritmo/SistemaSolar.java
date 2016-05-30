@@ -8,7 +8,7 @@ import com.uepb.algoritmo.operacoes2D.ElipseEquacao;
 import com.uepb.view.TelaPrincipal;
 import com.uepb.view.basica.Circunferencia;
 
-public class SistemaSolar {
+public class SistemaSolar {//Classe reposável pelo sistema solar
 
 	ElipseEquacao orbita = new ElipseEquacao();
 	Circunferencia terra = new Circunferencia();
@@ -19,11 +19,11 @@ public class SistemaSolar {
 	public SistemaSolar() {
 		limparSistemaSolar();
 
-		orbita.midpointElipse(200, 100);
+		orbita.midpointElipse(200, 100);//Cria uma elipse
 		
 		TelaPrincipal.povoarRetas(orbita.getListaPontos(), Color.GREEN);
 		
-		terra.setX(200);
+		terra.setX(200);//cria a terra numa posição inicial
 		terra.setY(0);
 		terra.setRaio(10);
 		terra.circunferenciaPontoMedio();
@@ -33,7 +33,7 @@ public class SistemaSolar {
 
 		desenharOrbitaESol();
 		
-		for (int i = 200; i >= -200; i--) {
+		for (int i = 200; i >= -200; i--) {//pega a lista de pontos da órbita da metade de cima
 			for (int j = 0; j <= 100; j++) {
 				if (orbita.contem(new Ponto(i, j, 0), orbita.getListaPontos())) {
 					sistema.add(new Ponto(i, j, 0));	
@@ -43,7 +43,7 @@ public class SistemaSolar {
 		
 		for (int i = -200; i <= 200; i++) {
 			for (int j = 0; j >= -100; j--) {
-				if (orbita.contem(new Ponto(i, j, 0), orbita.getListaPontos())) {
+				if (orbita.contem(new Ponto(i, j, 0), orbita.getListaPontos())) {//pega a lista de pontos da órbita da metade de baixo
 					sistema.add(new Ponto(i, j, 0));	
 				}		
 			}
@@ -60,10 +60,10 @@ public class SistemaSolar {
 	 */
 	private void desenharOrbitaESol() {
 		
-		orbita.midpointElipse(200, 100);
+		orbita.midpointElipse(200, 100);//Coloca a orbita
 		TelaPrincipal.povoarRetas(orbita.getListaPontos(), Color.GREEN);
 		
-		sol = new Circunferencia();
+		sol = new Circunferencia();//Desenha o Sol no centro do sistema
 		sol.setX(0);
 		sol.setY(0);
 		sol.setRaio(30);
@@ -83,7 +83,7 @@ public class SistemaSolar {
 		TelaPrincipal.getLista().clear();
 	}
 
-	private void animacao() {
+	private void animacao() {//Faz a animação, pra cada ponto da orbita o centro da terra será "setado", assim ele andara nele
 		Thread minhaThread = new Thread() {
 			public void run() {
 				// codigo para executar

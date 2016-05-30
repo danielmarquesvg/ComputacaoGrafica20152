@@ -1,10 +1,9 @@
 package com.uepb.algoritmo;
 
 /**
- * Ponto. TÃªm dois valores. X e Y
+ * Ponto. Temm dois valores. X e Y
  * 
- * @author Lucas Miranda Dourado
- *
+ *  *
  */
 public class Ponto {
 	private int x, y, z = 0;
@@ -13,7 +12,7 @@ public class Ponto {
 		// TODO Auto-generated constructor stub
 	}
 	/**
-	 * Coordenadas com 2D (Duas dimenï¿½ï¿½es)
+	 * Coordenadas com 2D (Duas dimensões)
 	 * 
 	 * @param x
 	 * @param y

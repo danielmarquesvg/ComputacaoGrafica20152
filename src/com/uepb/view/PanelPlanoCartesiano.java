@@ -13,7 +13,7 @@ import javax.swing.JPanel;
 
 import com.uepb.algoritmo.Ponto;
 
-public class PanelPlanoCartesiano extends JPanel {
+public class PanelPlanoCartesiano extends JPanel { //classe responsável pelo buffer do plano cartesiano
 
 	private static final long serialVersionUID = -5345146477227642140L;
 	final static int ALTURA = 600;
@@ -29,7 +29,7 @@ public class PanelPlanoCartesiano extends JPanel {
 				
 			}
 			@Override
-			public void mouseDragged(MouseEvent event) {
+			public void mouseDragged(MouseEvent event) {//pega as corrdenadas
 				int x = event.getPoint().x;
 				int y = event.getPoint().y;
 				lista.add(new Ponto(x, y, 0));
@@ -44,7 +44,7 @@ public class PanelPlanoCartesiano extends JPanel {
 	}
 
 	/**
-	 * Limpa a tela com branco. Apï¿½s limpar coloca as coordenadas.
+	 * Limpa a tela com branco. Apos limpar coloca as coordenadas.
 	 */
 	public void limparImagem() {
 		for (int i = 0; i < ALTURA; i++) {
@@ -57,7 +57,7 @@ public class PanelPlanoCartesiano extends JPanel {
 	}
 
 	/**
-	 * Adicionando a 3 dimensÃ£o.
+	 * Adicionando a 3 dimensão.
 	 * 
 	 * @param dimencao
 	 */

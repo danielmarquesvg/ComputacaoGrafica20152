@@ -3,6 +3,7 @@ package com.uepb.algoritmo;
 public class Matriz {
 
 	public static double[][] multiplicaMatrizes(double[][] matrizA, double[][] matrizB) throws Exception {
+		//Método que multiplica matrizes 
 		
 		int colunaB = matrizB[0].length;		
 		if (matrizA[0].length == matrizB.length) { 
@@ -23,6 +24,7 @@ public class Matriz {
 	}
 	
 	public static double[][] multiplicaMatrizes3D(double[][] matrizA, double[][] matrizB) throws Exception {
+		//Método que multiplica matrizes da aplicação 3D
 		
 		int coluna = matrizB[0].length;
 		if (matrizA[0].length == matrizB.length) {

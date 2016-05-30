@@ -38,7 +38,7 @@ public class EscalaInterface extends JDialog {
 	 * 
 	 * @param tipo
 	 */
-	public EscalaInterface() {
+	public EscalaInterface() {//Classe que obtem os dados do usuário para escala
 		
 		status = true;
 		setResizable(false);
@@ -82,7 +82,7 @@ public class EscalaInterface extends JDialog {
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		okButton.addActionListener(new ActionListener() {//Evento que faz a escala
 			public void actionPerformed(ActionEvent arg0) {
 				PanelReta.panelPlanoCartesiano.limparImagem();
 				

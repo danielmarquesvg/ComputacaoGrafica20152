@@ -20,10 +20,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.List;
 
-public class CircunferenciaPontoMedio extends JFrame {
+public class CircunferenciaPontoMedio extends JFrame {//Janela que obtem as informações para criação da circunferencia
 	private JTextField txt_raio;
 
-	public CircunferenciaPontoMedio() {
+	public CircunferenciaPontoMedio() {// será criado usando o algoritmo ponto médio
 		setResizable(false);
 		setVisible(true);
 		setTitle("Circunferencia Ponto M\u00E9dio");

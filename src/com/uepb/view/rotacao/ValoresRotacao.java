@@ -24,8 +24,8 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ValoresRotacao extends JDialog {
-
+public class ValoresRotacao extends JDialog {//Janela que obtem as informações para a rotação
+	
 	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField txtRotacao;
@@ -72,7 +72,7 @@ public class ValoresRotacao extends JDialog {
 		getContentPane().add(buttonPane, BorderLayout.SOUTH);
 
 		JButton okButton = new JButton("OK");
-		okButton.addActionListener(new ActionListener() {
+		okButton.addActionListener(new ActionListener() {//Evento que envia os dados da rotação
 			public void actionPerformed(ActionEvent arg0) {
 
 				PanelReta.panelPlanoCartesiano.limparImagem();

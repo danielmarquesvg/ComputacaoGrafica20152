@@ -6,9 +6,10 @@ import com.uepb.algoritmo.operacoes2D.RetasFuncoes;
 import com.uepb.view.TelaPrincipal;
 import com.uepb.view.basica.Retas;
 
-public class Recorte {
+public class Recorte {//Classe responsável pelo recorte
 	
-	public boolean[] code(int x, int y, int xmin, int xmax, int ymin, int ymax){
+	public boolean[] code(int x, int y, int xmin, int xmax, int ymin, int ymax){ //Um dos métodos usados no algoritmo do corte
+		
 		boolean[] code = new boolean[4] ;
 		
 		for (int i = 0; i < code.length; i++) {
@@ -23,7 +24,7 @@ public class Recorte {
 		return code;
 	}
 	
-	public boolean vazio(boolean bit[]){
+	public boolean vazio(boolean bit[]){//checa se ta vazio
 		
 		for (int i = 0; i < bit.length; i++) {
 			if(bit[i] == true){
@@ -60,21 +61,21 @@ public class Recorte {
 
 	 do {
 	   if (vazio(outcode0)  && vazio(outcode1) ) { 
-	       accept = true;  done = true;               /* trivial draw and exit */
+	       accept = true;  done = true;               /* trivial desenha e sai */
 	       System.out.println("aceitacao trivial");
 	   } else if(!andi(outcode0, outcode1)) {
-	       done = true;                               /* trivial reject and exit */
+	       done = true;                               /* trivial rejeita e sai */
 	       System.out.println("rejeicao trivial");
-	   } else {                                       /* discart an out part */
-	     outcodeOut = (!vazio(outcode0)) ?  outcode0 : outcode1;        /* pick an out vertice */
+	   } else {                                       /* discarta */
+	     outcodeOut = (!vazio(outcode0)) ?  outcode0 : outcode1;        /* Seleciona um vértice */
 	     System.out.println("Ponto escolhido: " + outcodeOut);
-	     if (outcodeOut[0] == true) {                                       /* discart top */
+	     if (outcodeOut[0] == true) {                                       /* discarta o topo */
 	       x = x0 + (x1 - x0) * (ymax - y0) / (y1 - y0);  y = ymax;
-	     } else if(outcodeOut[1] == true) {                                 /* discart bottom */
+	     } else if(outcodeOut[1] == true) {                                 /* discarta a parte de baixo */
 	       x = x0 + (x1 - x0) * (ymin - y0) / (y1 - y0);  y = ymin;
-	     } else if(outcodeOut[2] == true) {                                 /* discart right */
+	     } else if(outcodeOut[2] == true) {                                 /* discarta a direita */
 	       y = y0 + (y1 - y0) * (xmax - x0) / (x1 - x0);  x = xmax;
-	     } else if(outcodeOut[3] == true) {                                 /* discart left */
+	     } else if(outcodeOut[3] == true) {                                 /* discarta esquerda*/
 	       y = y0 + (y1 - y0) * (xmin - x0) / (x1 - x0);  x = xmin;
 	     }
 	     

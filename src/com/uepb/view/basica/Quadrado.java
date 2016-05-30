@@ -10,7 +10,7 @@ public class Quadrado {
 
 	List<Ponto> listaDePontos = new ArrayList<Ponto>();
 
-	public Quadrado() {
+	public Quadrado() {//Algoritmos que desenham um quadrado e um retangulo
 
 	}
 
