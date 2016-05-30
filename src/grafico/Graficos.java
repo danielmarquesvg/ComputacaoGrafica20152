@@ -11,11 +11,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.border.LineBorder;
 
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.data.general.DefaultPieDataset;
-
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -64,26 +59,11 @@ public class Graficos extends JFrame {
 		botaoPizza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				
-				/*DefaultPieDataset dpd = new DefaultPieDataset();
-				dpd.setValue("Provedor A ",25);
-				dpd.setValue("Provedor B ",42.5);
-				dpd.setValue("Provedor C ",17.5);
-				dpd.setValue("Provedor D ",15);
-				
-				JFreeChart grafico = ChartFactory.createPieChart("GRÁFICO EM PIZZA",dpd,true,true,false);
-				
-				ChartPanel chartPanel = new ChartPanel(grafico);*/
-				
 				Pizza pizza = new Pizza();
 				panel.removeAll();
 				panel.add(pizza);
 				panel.validate();
 				panel.repaint();
-				
-				
-				
-			
 				
 			}
 		});
@@ -128,9 +108,7 @@ public class Graficos extends JFrame {
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 20));
 		lblNewLabel.setBounds(389, 11, 204, 22);
 		contentPane.add(lblNewLabel);
-		
-		
-		
+			
 		
 	}
 }
