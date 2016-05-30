@@ -24,7 +24,7 @@ public class PanelInicial extends JPanel {
 		setLayout(null);
 		
 		JPanel panelCabecalho = new JPanel();
-		panelCabecalho.setBackground(new Color(0, 153, 204));
+		panelCabecalho.setBackground(new Color(0, 51, 204));
 		panelCabecalho.setBounds(0, 0, 1024, 42);
 		add(panelCabecalho);
 		panelCabecalho.setLayout(null);

@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_Transformacao_Logaritmo extends JPanel {
+public class Panel_Transformacao_Gamma extends JPanel {
 
-	public BufferedImage imagemLogaritmo;
+	public BufferedImage imagemGamma;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_Transformacao_Logaritmo() {
+	public Panel_Transformacao_Gamma() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -25,9 +25,9 @@ public class Panel_Transformacao_Logaritmo extends JPanel {
 	}
 	
 	public void colocaImagemNoPainel(int alturaDaImagem1, int larguraDaImagem1, int matrizDaImagem1[][],
-			float constanteA){
+			float valorGamma, float valorC){
 		try {
-			geraImagem(alturaDaImagem1, larguraDaImagem1, matrizDaImagem1, constanteA);
+			geraImagem(alturaDaImagem1, larguraDaImagem1, matrizDaImagem1, valorGamma, valorC);
 			
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "Ocorreu um erro ao tentar abrir a imagem.");
@@ -37,18 +37,18 @@ public class Panel_Transformacao_Logaritmo extends JPanel {
 		}
 	}
 	
-	public void geraImagem(int alturaDaImagem1, int larguraDaImagem1, int matrizDaImagem1[][], float constanteA) throws Exception{
+	public void geraImagem(int alturaDaImagem1, int larguraDaImagem1, int matrizDaImagem1[][], float valorGamma, float valorC) throws Exception{
 		
         int altura = alturaDaImagem1;
         int largura = larguraDaImagem1;
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemLogaritmo = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemGamma = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		matrizImagem[i][j] = (int)(constanteA * (Math.log(matrizDaImagem1[i][j] + 1)));
+        		matrizImagem[i][j] = (int)(valorC * (Math.pow(matrizDaImagem1[i][j], valorGamma)));
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
         		if(matrizImagem[i][j] > 255){
@@ -60,7 +60,7 @@ public class Panel_Transformacao_Logaritmo extends JPanel {
         			matrizImagem[i][j] = 0;
         		}
         		
-        		imagemLogaritmo.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		imagemGamma.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -75,7 +75,7 @@ public class Panel_Transformacao_Logaritmo extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemLogaritmo, 0, 0, null);
+		g.drawImage(imagemGamma, 0, 0, null);
 	}
 
 }

@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import algoritmos.Panel_OperadorAritmetico_Multiplicacao;
+import algoritmosDeProcessamentoDeImagens.Panel_OperadorAritmetico_Multiplicacao;
 import interfaceGrafica.filtros.TelaFiltros;
 import interfaceGrafica.histograma.TelaHistograma;
 import interfaceGrafica.telaPrincipal.PanelInicial;
@@ -45,7 +45,7 @@ public class TelaOperadorAritmeticoMultiplicacao extends JPanel {
 		
 		JPanel panelOpcaoLateral = new JPanel();
 		panelOpcaoLateral.setBackground(SystemColor.scrollbar);
-		panelOpcaoLateral.setBounds(0, 0, 194, 720);
+		panelOpcaoLateral.setBounds(0, 102, 194, 618);
 		add(panelOpcaoLateral);
 		panelOpcaoLateral.setLayout(null);
 		
@@ -63,7 +63,7 @@ public class TelaOperadorAritmeticoMultiplicacao extends JPanel {
 		});
 		botaoPaginaInicial.setHorizontalAlignment(SwingConstants.LEFT);
 		botaoPaginaInicial.setIcon(new ImageIcon(PanelInicial.class.getResource("/com/icon/home.png")));
-		botaoPaginaInicial.setBounds(0, 102, 194, 39);
+		botaoPaginaInicial.setBounds(0, 11, 194, 39);
 		botaoPaginaInicial.setForeground(Color.BLACK);
 		botaoPaginaInicial.setBackground(SystemColor.scrollbar);
 		botaoPaginaInicial.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
@@ -85,7 +85,7 @@ public class TelaOperadorAritmeticoMultiplicacao extends JPanel {
 		botaoOperadoresAritmeticos.setForeground(Color.BLACK);
 		botaoOperadoresAritmeticos.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoOperadoresAritmeticos.setBackground(SystemColor.scrollbar);
-		botaoOperadoresAritmeticos.setBounds(20, 178, 174, 39);
+		botaoOperadoresAritmeticos.setBounds(20, 87, 174, 39);
 		panelOpcaoLateral.add(botaoOperadoresAritmeticos);
 		
 		JButton botaoMenuAdicao = new JButton("Adição");
@@ -93,7 +93,7 @@ public class TelaOperadorAritmeticoMultiplicacao extends JPanel {
 		botaoMenuAdicao.setForeground(Color.BLACK);
 		botaoMenuAdicao.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuAdicao.setBackground(SystemColor.scrollbar);
-		botaoMenuAdicao.setBounds(30, 217, 164, 39);
+		botaoMenuAdicao.setBounds(30, 126, 164, 39);
 		panelOpcaoLateral.add(botaoMenuAdicao);
 		
 		JButton botaoMenuSubtracao = new JButton("Subtração");
@@ -112,7 +112,7 @@ public class TelaOperadorAritmeticoMultiplicacao extends JPanel {
 		botaoMenuSubtracao.setForeground(Color.BLACK);
 		botaoMenuSubtracao.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuSubtracao.setBackground(SystemColor.scrollbar);
-		botaoMenuSubtracao.setBounds(30, 256, 164, 39);
+		botaoMenuSubtracao.setBounds(30, 165, 164, 39);
 		panelOpcaoLateral.add(botaoMenuSubtracao);
 		
 		JButton botaoMenuMultiplicacao = new JButton("Multiplicação");
@@ -131,7 +131,7 @@ public class TelaOperadorAritmeticoMultiplicacao extends JPanel {
 		botaoMenuMultiplicacao.setForeground(Color.BLACK);
 		botaoMenuMultiplicacao.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuMultiplicacao.setBackground(Color.GRAY);
-		botaoMenuMultiplicacao.setBounds(30, 294, 164, 39);
+		botaoMenuMultiplicacao.setBounds(30, 203, 164, 39);
 		panelOpcaoLateral.add(botaoMenuMultiplicacao);
 		
 		JButton botaoMenuDivisao = new JButton("Divisão");
@@ -150,7 +150,7 @@ public class TelaOperadorAritmeticoMultiplicacao extends JPanel {
 		botaoMenuDivisao.setForeground(Color.BLACK);
 		botaoMenuDivisao.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuDivisao.setBackground(SystemColor.scrollbar);
-		botaoMenuDivisao.setBounds(30, 333, 164, 39);
+		botaoMenuDivisao.setBounds(30, 242, 164, 39);
 		panelOpcaoLateral.add(botaoMenuDivisao);
 		
 		JButton botaoMenuFiltros = new JButton("Filtros");
@@ -169,7 +169,7 @@ botaoMenuFiltros.addActionListener(new ActionListener() {
 		botaoMenuFiltros.setForeground(Color.BLACK);
 		botaoMenuFiltros.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuFiltros.setBackground(SystemColor.scrollbar);
-		botaoMenuFiltros.setBounds(10, 411, 184, 39);
+		botaoMenuFiltros.setBounds(10, 320, 184, 39);
 		panelOpcaoLateral.add(botaoMenuFiltros);
 		
 		JButton botaoOperadores = new JButton("Operadores");
@@ -188,7 +188,7 @@ botaoMenuFiltros.addActionListener(new ActionListener() {
 		botaoOperadores.setForeground(Color.BLACK);
 		botaoOperadores.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoOperadores.setBackground(SystemColor.scrollbar);
-		botaoOperadores.setBounds(10, 140, 184, 39);
+		botaoOperadores.setBounds(10, 49, 184, 39);
 		panelOpcaoLateral.add(botaoOperadores);
 		
 		JButton botaoMenuHistograma = new JButton("Histograma");
@@ -207,13 +207,8 @@ botaoMenuFiltros.addActionListener(new ActionListener() {
 		botaoMenuHistograma.setForeground(Color.BLACK);
 		botaoMenuHistograma.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuHistograma.setBackground(SystemColor.scrollbar);
-		botaoMenuHistograma.setBounds(10, 450, 184, 39);
+		botaoMenuHistograma.setBounds(10, 359, 184, 39);
 		panelOpcaoLateral.add(botaoMenuHistograma);
-		
-		JLabel lblImg = new JLabel("");
-		lblImg.setIcon(new ImageIcon(TelaOperadorAritmeticoAdicao.class.getResource("/com/br/images/logo.jpg")));
-		lblImg.setBounds(0, 0, 194, 104);
-		panelOpcaoLateral.add(lblImg);
 		
 		JButton botaoOperadoresLogicos = new JButton("Lógicos");
 		botaoOperadoresLogicos.addActionListener(new ActionListener() {
@@ -231,7 +226,7 @@ botaoMenuFiltros.addActionListener(new ActionListener() {
 		botaoOperadoresLogicos.setForeground(Color.BLACK);
 		botaoOperadoresLogicos.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoOperadoresLogicos.setBackground(SystemColor.scrollbar);
-		botaoOperadoresLogicos.setBounds(20, 372, 174, 39);
+		botaoOperadoresLogicos.setBounds(20, 281, 174, 39);
 		panelOpcaoLateral.add(botaoOperadoresLogicos);
 		
 		// FIM PANEL LATERAL
@@ -359,8 +354,8 @@ botaoMenuFiltros.addActionListener(new ActionListener() {
 		//INICIO PANEL SUPERIOR
 		
 		JPanel panelSuperior = new JPanel();
-		panelSuperior.setBackground(SystemColor.windowBorder);
-		panelSuperior.setBounds(194, 0, 830, 102);
+		panelSuperior.setBackground(new Color(0, 51, 204));
+		panelSuperior.setBounds(0, 0, 1024, 102);
 		add(panelSuperior);
 		panelSuperior.setLayout(null);
 		

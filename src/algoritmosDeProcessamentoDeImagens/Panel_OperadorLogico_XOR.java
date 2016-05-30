@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_OperadorLogico_OR extends JPanel {
+public class Panel_OperadorLogico_XOR extends JPanel {
 
-	public BufferedImage imagemOR;
+	public BufferedImage imagemXOR;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_OperadorLogico_OR() {
+	public Panel_OperadorLogico_XOR() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -58,20 +58,20 @@ public class Panel_OperadorLogico_OR extends JPanel {
         }
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemOR = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemXOR = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		//operacao de OR
-        		matrizImagem[i][j] = (matrizDaImagem1[i][j] | matrizDaImagem2[i][j]);
+        		//operacao de XOR
+        		matrizImagem[i][j] = (matrizDaImagem1[i][j] ^ matrizDaImagem2[i][j]);
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
         		if(matrizImagem[i][j] > 255){
         			matrizImagem[i][j] = 255;
         		}
         		
-        		imagemOR.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		imagemXOR.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -86,7 +86,7 @@ public class Panel_OperadorLogico_OR extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemOR, 0, 0, null);
+		g.drawImage(imagemXOR, 0, 0, null);
 	}
 
 }

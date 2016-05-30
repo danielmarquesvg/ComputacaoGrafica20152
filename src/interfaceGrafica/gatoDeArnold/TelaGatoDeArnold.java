@@ -38,7 +38,7 @@ public class TelaGatoDeArnold extends JPanel {
 		// Painel lateral
 		JPanel panelOpcaoLateral = new JPanel();
 		panelOpcaoLateral.setBackground(SystemColor.scrollbar);
-		panelOpcaoLateral.setBounds(0, 0, 194, 720);
+		panelOpcaoLateral.setBounds(0, 101, 194, 619);
 		add(panelOpcaoLateral);
 		panelOpcaoLateral.setLayout(null);
 
@@ -57,18 +57,12 @@ public class TelaGatoDeArnold extends JPanel {
 		botaoPaginaInicial.setHorizontalAlignment(SwingConstants.LEFT);
 		botaoPaginaInicial.setIcon(new ImageIcon(PanelInicial.class
 				.getResource("/com/icon/home.png")));
-		botaoPaginaInicial.setBounds(0, 102, 194, 39);
+		botaoPaginaInicial.setBounds(0, 11, 194, 39);
 		botaoPaginaInicial.setForeground(Color.BLACK);
 		botaoPaginaInicial.setBackground(SystemColor.scrollbar);
 		botaoPaginaInicial.setFont(new Font("Segoe UI Semilight", Font.PLAIN,
 				18));
 		panelOpcaoLateral.add(botaoPaginaInicial);
-
-		JLabel lblImg = new JLabel("");
-		lblImg.setIcon(new ImageIcon(TelaHistograma.class
-				.getResource("/com/br/images/logo.jpg")));
-		lblImg.setBounds(0, 0, 194, 103);
-		panelOpcaoLateral.add(lblImg);
 
 		JButton botaoOperadores = new JButton("Operadores");
 		botaoOperadores.addActionListener(new ActionListener() {
@@ -86,7 +80,7 @@ public class TelaGatoDeArnold extends JPanel {
 		botaoOperadores.setForeground(Color.BLACK);
 		botaoOperadores.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoOperadores.setBackground(SystemColor.scrollbar);
-		botaoOperadores.setBounds(10, 141, 184, 39);
+		botaoOperadores.setBounds(10, 50, 184, 39);
 		panelOpcaoLateral.add(botaoOperadores);
 
 		JButton botaoMenuFiltros = new JButton("Filtros");
@@ -106,7 +100,7 @@ public class TelaGatoDeArnold extends JPanel {
 		botaoMenuFiltros
 				.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuFiltros.setBackground(SystemColor.scrollbar);
-		botaoMenuFiltros.setBounds(10, 180, 184, 39);
+		botaoMenuFiltros.setBounds(10, 89, 184, 39);
 		panelOpcaoLateral.add(botaoMenuFiltros);
 
 		JButton botaoMenuHistograma = new JButton("Histogramas");
@@ -126,7 +120,7 @@ public class TelaGatoDeArnold extends JPanel {
 		botaoMenuHistograma.setFont(new Font("Segoe UI Semilight", Font.PLAIN,
 				14));
 		botaoMenuHistograma.setBackground(SystemColor.scrollbar);
-		botaoMenuHistograma.setBounds(10, 217, 184, 39);
+		botaoMenuHistograma.setBounds(10, 126, 184, 39);
 		panelOpcaoLateral.add(botaoMenuHistograma);
 
 		JButton btnGatoDeArnold = new JButton("Gato de Arnold");
@@ -143,7 +137,7 @@ public class TelaGatoDeArnold extends JPanel {
 		btnGatoDeArnold.setForeground(Color.BLACK);
 		btnGatoDeArnold.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		btnGatoDeArnold.setBackground(SystemColor.scrollbar);
-		btnGatoDeArnold.setBounds(10, 253, 184, 39);
+		btnGatoDeArnold.setBounds(10, 162, 184, 39);
 		panelOpcaoLateral.add(btnGatoDeArnold);
 
 		JButton botaoMenuTransformacao = new JButton("Transforma\u00E7\u00E3o");
@@ -163,7 +157,7 @@ public class TelaGatoDeArnold extends JPanel {
 		botaoMenuTransformacao.setFont(new Font("Segoe UI Semilight",
 				Font.PLAIN, 14));
 		botaoMenuTransformacao.setBackground(SystemColor.scrollbar);
-		botaoMenuTransformacao.setBounds(10, 290, 184, 39);
+		botaoMenuTransformacao.setBounds(10, 199, 184, 39);
 		panelOpcaoLateral.add(botaoMenuTransformacao);
 
 		JButton botaoMenuEqualizacao = new JButton("Equaliza\u00E7\u00E3o");
@@ -183,14 +177,14 @@ public class TelaGatoDeArnold extends JPanel {
 		botaoMenuEqualizacao.setFont(new Font("Segoe UI Semilight", Font.PLAIN,
 				14));
 		botaoMenuEqualizacao.setBackground(SystemColor.scrollbar);
-		botaoMenuEqualizacao.setBounds(10, 327, 184, 39);
+		botaoMenuEqualizacao.setBounds(10, 236, 184, 39);
 		panelOpcaoLateral.add(botaoMenuEqualizacao);
 
 		// INICIO PANEL SUPERIOR
 
 		JPanel panelSuperior = new JPanel();
-		panelSuperior.setBackground(SystemColor.windowBorder);
-		panelSuperior.setBounds(194, 0, 830, 102);
+		panelSuperior.setBackground(new Color(0, 51, 204));
+		panelSuperior.setBounds(0, 0, 1024, 102);
 		add(panelSuperior);
 		panelSuperior.setLayout(null);
 

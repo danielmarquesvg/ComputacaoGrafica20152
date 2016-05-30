@@ -10,7 +10,7 @@ import java.awt.Rectangle;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-import algoritmos.Circunferencia;
+import algoritmosDeProcessamentoDeImagens.Circunferencia;
 import interfaceGrafica.buffer.PainelDoBuffer;
 
 import java.awt.event.ActionListener;

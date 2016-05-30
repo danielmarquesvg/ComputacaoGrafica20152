@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_Filtros_Prewitt extends JPanel {
+public class Panel_Filtros_RobertsCruzado extends JPanel {
 
-	public BufferedImage imagemPrewitt;
+	public BufferedImage imagemRobertsCruzado;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_Filtros_Prewitt() {
+	public Panel_Filtros_RobertsCruzado() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -43,54 +43,32 @@ public class Panel_Filtros_Prewitt extends JPanel {
         int largura = larguraDaImagem1;
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemPrewitt = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemRobertsCruzado = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		//aproximacoes em X e Y
+        		//Aproximacoes em X e Y
         		int aproximacaoX = 0;
         		int aproximacaoY = 0;
 
-        		if (((i - 1) >= 0) && ((j + 1) < altura)) {
-        			aproximacaoX += matrizDaImagem1[i - 1][j + 1];
-        			aproximacaoY -= matrizDaImagem1[i - 1][j + 1];
-        		}
-        		
-        		if ((j + 1) < altura) {
-        			aproximacaoX += matrizDaImagem1[i][j + 1];
-        		}
-        		
-        		if (((i + 1) < largura) && ((j + 1) < altura)) {
-        			aproximacaoX += matrizDaImagem1[i + 1][j + 1];
-        			aproximacaoY += matrizDaImagem1[i + 1][j + 1];
-        		}
-        		
-        		if (((i - 1) >= 0) && ((j - 1) >= 0)) {
-        			aproximacaoX -= matrizDaImagem1[i - 1][j - 1];
-        			aproximacaoY -= matrizDaImagem1[i - 1][j - 1];
-        		}
-        		
-        		if ((j - 1) >= 0) {
-        			aproximacaoX -= matrizDaImagem1[i][j - 1];
-        		}
-        		
-        		if (((i + 1) < largura) && ((j - 1) >= 0)){
-        			aproximacaoX -= matrizDaImagem1[i + 1][j - 1];
-        			aproximacaoY += matrizDaImagem1[i + 1][j - 1];
+        		if (((j + 1) < altura) && ((i + 1) < altura)) {
+        			aproximacaoY = matrizDaImagem1[i][j] - matrizDaImagem1[i + 1][j + 1];
+        		} else {
+        			aproximacaoY = matrizDaImagem1[i][j];
         		}
         		
         		if ((i + 1) < largura){
-        			aproximacaoY += matrizDaImagem1[i + 1][j];
+        			aproximacaoX += matrizDaImagem1[i + 1][j];
+        		}
+        		if ((j + 1) < altura){
+        			aproximacaoX += - matrizDaImagem1[i][j + 1];
         		}
         		
-        		if ((i - 1) >= 0){
-        			aproximacaoY -= matrizDaImagem1[i - 1][j];
-        		}
+        		//Modulo da soma das Aproximações
+        		int mag = Math.abs(aproximacaoY) + Math.abs(aproximacaoX);
         		
-        		//modulo da soma das aproximações em X e Y
-        		int mag = Math.abs(aproximacaoX) + Math.abs(aproximacaoY);
-        		
+        		//Adicionando o valor do pixel na matriz
         		matrizImagem[i][j] = mag;
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
@@ -103,7 +81,7 @@ public class Panel_Filtros_Prewitt extends JPanel {
         			matrizImagem[i][j] = 0;
         		}
         		
-        		imagemPrewitt.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		imagemRobertsCruzado.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -118,7 +96,7 @@ public class Panel_Filtros_Prewitt extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemPrewitt, 0, 0, null);
+		g.drawImage(imagemRobertsCruzado, 0, 0, null);
 	}
 
 }

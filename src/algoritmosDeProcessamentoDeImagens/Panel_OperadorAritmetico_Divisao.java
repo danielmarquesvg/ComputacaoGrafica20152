@@ -1,8 +1,7 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -10,14 +9,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_OperadorLogico_XOR extends JPanel {
+public class Panel_OperadorAritmetico_Divisao extends JPanel {
 
-	public BufferedImage imagemXOR;
+	public BufferedImage imagemDivisao;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_OperadorLogico_XOR() {
+	public Panel_OperadorAritmetico_Divisao() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -43,7 +42,7 @@ public class Panel_OperadorLogico_XOR extends JPanel {
         
         /*
          * verificacao da imagem com menor resolucao
-         * utiliza a menor resolucao como padrao da resolucao da imagem processada com a operacao de adicao
+         * utiliza a menor resolucao como padrao da resolucao da imagem processada com a operacao de divisao
          */
         if(alturaDaImagem1 <= alturaDaImagem2){
         	altura = alturaDaImagem1;
@@ -58,20 +57,27 @@ public class Panel_OperadorLogico_XOR extends JPanel {
         }
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemXOR = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemDivisao = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		//operacao de XOR
-        		matrizImagem[i][j] = (matrizDaImagem1[i][j] ^ matrizDaImagem2[i][j]);
+        		//operacao de divisao
+        		if(matrizDaImagem2[i][j] == 0){
+        			
+        			//tratamento da divisao por zero, por padrao soma-se mais 1 no divisor
+        			matrizDaImagem2[i][j] = matrizDaImagem2[i][j] + 1;
+        			matrizImagem[i][j] = (int)(matrizDaImagem1[i][j] / matrizDaImagem2[i][j]);
+        		} else {
+        			matrizImagem[i][j] = (int)(matrizDaImagem1[i][j] / matrizDaImagem2[i][j]);
+        		}
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
         		if(matrizImagem[i][j] > 255){
         			matrizImagem[i][j] = 255;
         		}
         		
-        		imagemXOR.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		imagemDivisao.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -86,7 +92,7 @@ public class Panel_OperadorLogico_XOR extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemXOR, 0, 0, null);
+		g.drawImage(imagemDivisao, 0, 0, null);
 	}
 
 }

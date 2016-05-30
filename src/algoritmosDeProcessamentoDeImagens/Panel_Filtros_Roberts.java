@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_Filtros_RobertsCruzado extends JPanel {
+public class Panel_Filtros_Roberts extends JPanel {
 
-	public BufferedImage imagemRobertsCruzado;
+	public BufferedImage imagemRoberts;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_Filtros_RobertsCruzado() {
+	public Panel_Filtros_Roberts() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -43,32 +43,31 @@ public class Panel_Filtros_RobertsCruzado extends JPanel {
         int largura = larguraDaImagem1;
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemRobertsCruzado = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemRoberts = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		//Aproximacoes em X e Y
+        		//Aproximações em X e Y
         		int aproximacaoX = 0;
         		int aproximacaoY = 0;
 
-        		if (((j + 1) < altura) && ((i + 1) < altura)) {
-        			aproximacaoY = matrizDaImagem1[i][j] - matrizDaImagem1[i + 1][j + 1];
-        		} else {
+        		if ((j + 1) < altura){
+        			aproximacaoY = matrizDaImagem1[i][j] - matrizDaImagem1[i][j + 1];
+        		}else{
         			aproximacaoY = matrizDaImagem1[i][j];
         		}
         		
-        		if ((i + 1) < largura){
-        			aproximacaoX += matrizDaImagem1[i + 1][j];
-        		}
-        		if ((j + 1) < altura){
-        			aproximacaoX += - matrizDaImagem1[i][j + 1];
+        		if ((i + 1) < altura){
+        			aproximacaoX = matrizDaImagem1[i][j] - matrizDaImagem1[i + 1][j];
+        		}else {
+        			aproximacaoX = matrizDaImagem1[i][j];
         		}
         		
         		//Modulo da soma das Aproximações
-        		int mag = Math.abs(aproximacaoY) + Math.abs(aproximacaoX);
+        		int mag = Math.abs(aproximacaoX) + Math.abs(aproximacaoY);
         		
-        		//Adicionando o valor do pixel na matriz
+        		//Adiciona o novo valor na matriz
         		matrizImagem[i][j] = mag;
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
@@ -81,7 +80,8 @@ public class Panel_Filtros_RobertsCruzado extends JPanel {
         			matrizImagem[i][j] = 0;
         		}
         		
-        		imagemRobertsCruzado.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		//coloca o valor do pixel no buffered image
+        		imagemRoberts.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -96,7 +96,7 @@ public class Panel_Filtros_RobertsCruzado extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemRobertsCruzado, 0, 0, null);
+		g.drawImage(imagemRoberts, 0, 0, null);
 	}
 
 }

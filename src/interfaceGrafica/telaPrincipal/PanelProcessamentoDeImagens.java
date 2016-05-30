@@ -33,14 +33,14 @@ public class PanelProcessamentoDeImagens extends JPanel {
 		
 		JPanel panelOpcaoLateral = new JPanel();
 		panelOpcaoLateral.setBackground(SystemColor.scrollbar);
-		panelOpcaoLateral.setBounds(0, 0, 194, 720);
+		panelOpcaoLateral.setBounds(0, 102, 194, 618);
 		add(panelOpcaoLateral);
 		panelOpcaoLateral.setLayout(null);
 		
 		JButton botaoPaginaInicial = new JButton("Página Inicial");
 		botaoPaginaInicial.setHorizontalAlignment(SwingConstants.LEFT);
 		botaoPaginaInicial.setIcon(new ImageIcon(PanelInicial.class.getResource("/com/icon/home.png")));
-		botaoPaginaInicial.setBounds(0, 102, 194, 39);
+		botaoPaginaInicial.setBounds(0, 11, 194, 39);
 		botaoPaginaInicial.setForeground(Color.BLACK);
 		botaoPaginaInicial.setBackground(Color.GRAY);
 		botaoPaginaInicial.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
@@ -57,11 +57,6 @@ public class PanelProcessamentoDeImagens extends JPanel {
 				
 			}
 		});
-		
-		JLabel lblImg = new JLabel("");
-		lblImg.setIcon(new ImageIcon(PanelInicial.class.getResource("/com/br/images/logo.jpg")));
-		lblImg.setBounds(0, 0, 194, 104);
-		panelOpcaoLateral.add(lblImg);
 		
 		// FIM PANEL LATERAL
 		
@@ -186,8 +181,8 @@ public class PanelProcessamentoDeImagens extends JPanel {
 		//INICIO PANEL SUPERIOR
 		
 		JPanel panelSuperior = new JPanel();
-		panelSuperior.setBackground(SystemColor.windowBorder);
-		panelSuperior.setBounds(194, 0, 830, 102);
+		panelSuperior.setBackground(new Color(0, 51, 204));
+		panelSuperior.setBounds(0, 0, 1024, 102);
 		add(panelSuperior);
 		panelSuperior.setLayout(null);
 		

@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -6,19 +6,18 @@ import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_Transformacao_Negativo extends JPanel {
+public class Panel_Filtros_PassaAlta extends JPanel {
 
-	public BufferedImage imagemNegativo;
+	public BufferedImage imagemPassaAlta;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_Transformacao_Negativo() {
+	public Panel_Filtros_PassaAlta() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -43,12 +42,45 @@ public class Panel_Transformacao_Negativo extends JPanel {
         int largura = larguraDaImagem1;
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemNegativo = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemPassaAlta = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		matrizImagem[i][j] = 255 - matrizDaImagem1[i][j];
+        		//variavel para salvar a soma dos pixels da vizinhança
+        		int soma = 0;
+        		
+        		//pixel central: multiplica por 8
+        		soma += 8*matrizDaImagem1[i][j];
+        		
+        		//para os demais pixels, multiplica por -1
+        		if ((i - 1) >= 0) {
+        			soma += -1*matrizDaImagem1[i - 1][j];
+        		}
+        		if ((i + 1) < largura) {
+        			soma += -1*matrizDaImagem1[i + 1][j];
+        		}
+        		if ((j - 1) >= 0) {
+        			soma += -1*matrizDaImagem1[i][j - 1];
+        		}
+        		if ((j + 1) < altura) {
+        			soma += -1*matrizDaImagem1[i][j + 1];
+        		}
+        		if (((i - 1) >= 0) && ((j - 1) >= 0)) {
+        			soma += -1*matrizDaImagem1[i - 1][j - 1];
+        		}
+        		if (((i + 1) < largura) && ((j - 1) >= 0)) {
+        			soma += -1*matrizDaImagem1[i + 1][j - 1];
+        		}
+        		if (((i - 1) >= 0) && ((j + 1) < altura)) {
+        			soma += -1*matrizDaImagem1[i - 1][j + 1];
+        		}
+        		if (((i + 1) < largura) && ((j + 1) < altura)) {
+        			soma += -1*matrizDaImagem1[i + 1][j + 1];
+        		}
+        		
+        		//na posição atual, faz a soma e divide por 9, o resultado é inserido na posição [i][j]
+        		matrizImagem[i][j] = (int)(soma/9);
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
         		if(matrizImagem[i][j] > 255){
@@ -60,7 +92,7 @@ public class Panel_Transformacao_Negativo extends JPanel {
         			matrizImagem[i][j] = 0;
         		}
         		
-        		imagemNegativo.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		imagemPassaAlta.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -75,7 +107,7 @@ public class Panel_Transformacao_Negativo extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemNegativo, 0, 0, null);
+		g.drawImage(imagemPassaAlta, 0, 0, null);
 	}
 
 }

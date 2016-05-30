@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_OperadorAritmetico_Subtracao extends JPanel {
+public class Panel_OperadorLogico_OR extends JPanel {
 
-	public BufferedImage imagemSubtracao;
+	public BufferedImage imagemOR;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_OperadorAritmetico_Subtracao() {
+	public Panel_OperadorLogico_OR() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -43,7 +43,7 @@ public class Panel_OperadorAritmetico_Subtracao extends JPanel {
         
         /*
          * verificacao da imagem com menor resolucao
-         * utiliza a menor resolucao como padrao da resolucao da imagem processada com a operacao de subtracao
+         * utiliza a menor resolucao como padrao da resolucao da imagem processada com a operacao de adicao
          */
         if(alturaDaImagem1 <= alturaDaImagem2){
         	altura = alturaDaImagem1;
@@ -58,20 +58,20 @@ public class Panel_OperadorAritmetico_Subtracao extends JPanel {
         }
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemSubtracao = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemOR = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		//operacao de subtracao
-        		matrizImagem[i][j] = matrizDaImagem1[i][j] - matrizDaImagem2[i][j];
+        		//operacao de OR
+        		matrizImagem[i][j] = (matrizDaImagem1[i][j] | matrizDaImagem2[i][j]);
         		
-        		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 0 (valor minimo)
-        		if(matrizImagem[i][j] < 0){
-        			matrizImagem[i][j] = 0;
+        		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
+        		if(matrizImagem[i][j] > 255){
+        			matrizImagem[i][j] = 255;
         		}
         		
-        		imagemSubtracao.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		imagemOR.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -86,7 +86,7 @@ public class Panel_OperadorAritmetico_Subtracao extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemSubtracao, 0, 0, null);
+		g.drawImage(imagemOR, 0, 0, null);
 	}
 
 }

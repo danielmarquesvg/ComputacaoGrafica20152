@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -11,14 +11,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_Filtros_Sobel extends JPanel {
+public class Panel_Transformacao_Negativo extends JPanel {
 
-	public BufferedImage imagemSobel;
+	public BufferedImage imagemNegativo;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_Filtros_Sobel() {
+	public Panel_Transformacao_Negativo() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -43,49 +43,12 @@ public class Panel_Filtros_Sobel extends JPanel {
         int largura = larguraDaImagem1;
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemSobel = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemNegativo = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		int fatA = 0;
-        		int fatB = 0;
-        		int fatC = 0;
-        		int fatD = 0;
-        		if ((i - 1) >= 0) {
-        			fatD += 2*matrizDaImagem1[i - 1][j];
-        		}
-        		if ((i + 1) < largura) {
-        			fatC += 2*matrizDaImagem1[i + 1][j];
-        		}
-        		if ((j - 1) >= 0) {
-        			fatB += 2*matrizDaImagem1[i][j - 1];
-        		}
-        		if ((j + 1) < altura) {
-        			fatA += 2*matrizDaImagem1[i][j + 1];
-        		}
-        		if (((i - 1) >= 0) && ((j - 1) >= 0)) {
-        			fatB += matrizDaImagem1[i - 1][j - 1];
-        			fatD += matrizDaImagem1[i - 1][j - 1];
-        		}
-        		if (((i + 1) < largura) && ((j - 1) >= 0)) {
-        			fatB += matrizDaImagem1[i + 1][j - 1];
-        			fatC += matrizDaImagem1[i + 1][j - 1];
-        		}
-        		if (((i - 1) >= 0) && ((j + 1) < altura)) {
-        			fatA += matrizDaImagem1[i - 1][j + 1];
-        			fatD += matrizDaImagem1[i - 1][j + 1];
-        		}
-        		if (((i + 1) < largura) && ((j + 1) < altura)) {
-        			fatA += matrizDaImagem1[i + 1][j + 1];
-        			fatC += matrizDaImagem1[i + 1][j + 1];;
-        		}
-
-        		int aux1 = fatA - fatB;
-        		int aux2 = fatC - fatD;
-        		int mag = Math.abs(aux1) + Math.abs(aux2);
-        		
-        		matrizImagem[i][j] = mag;
+        		matrizImagem[i][j] = 255 - matrizDaImagem1[i][j];
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
         		if(matrizImagem[i][j] > 255){
@@ -97,7 +60,7 @@ public class Panel_Filtros_Sobel extends JPanel {
         			matrizImagem[i][j] = 0;
         		}
         		
-        		imagemSobel.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		imagemNegativo.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -112,7 +75,7 @@ public class Panel_Filtros_Sobel extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemSobel, 0, 0, null);
+		g.drawImage(imagemNegativo, 0, 0, null);
 	}
 
 }

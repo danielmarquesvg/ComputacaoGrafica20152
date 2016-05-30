@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 
-import algoritmos.Panel_OperadorLogico_AND;
+import algoritmosDeProcessamentoDeImagens.Panel_OperadorLogico_AND;
 import interfaceGrafica.equalizarImagem.TelaEqualizarImagem;
 import interfaceGrafica.filtros.TelaFiltros;
 import interfaceGrafica.gatoDeArnold.TelaGatoDeArnold;
@@ -46,7 +46,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		
 		JPanel panelOpcaoLateral = new JPanel();
 		panelOpcaoLateral.setBackground(SystemColor.scrollbar);
-		panelOpcaoLateral.setBounds(0, 0, 194, 720);
+		panelOpcaoLateral.setBounds(0, 102, 194, 618);
 		add(panelOpcaoLateral);
 		panelOpcaoLateral.setLayout(null);
 		
@@ -63,15 +63,10 @@ public class TelaOperadorLogicoAND extends JPanel {
 			}
 		});
 		
-		JLabel lblImg = new JLabel("");
-		lblImg.setIcon(new ImageIcon(TelaOperadorAritmeticoAdicao.class.getResource("/com/br/images/logo.jpg")));
-		lblImg.setBounds(0, 0, 194, 104);
-		panelOpcaoLateral.add(lblImg);
-		
 		
 		botaoPaginaInicial.setHorizontalAlignment(SwingConstants.LEFT);
 		botaoPaginaInicial.setIcon(new ImageIcon(PanelInicial.class.getResource("/com/icon/home.png")));
-		botaoPaginaInicial.setBounds(0, 102, 194, 39);
+		botaoPaginaInicial.setBounds(0, 11, 194, 39);
 		botaoPaginaInicial.setForeground(Color.BLACK);
 		botaoPaginaInicial.setBackground(SystemColor.scrollbar);
 		botaoPaginaInicial.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 18));
@@ -93,7 +88,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoOperadoresAritmeticos.setForeground(Color.BLACK);
 		botaoOperadoresAritmeticos.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoOperadoresAritmeticos.setBackground(SystemColor.scrollbar);
-		botaoOperadoresAritmeticos.setBounds(20, 178, 174, 39);
+		botaoOperadoresAritmeticos.setBounds(20, 87, 174, 39);
 		panelOpcaoLateral.add(botaoOperadoresAritmeticos);
 		
 		JButton botaoMenuAND = new JButton("AND");
@@ -101,7 +96,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoMenuAND.setForeground(Color.BLACK);
 		botaoMenuAND.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuAND.setBackground(Color.GRAY);
-		botaoMenuAND.setBounds(30, 255, 164, 39);
+		botaoMenuAND.setBounds(30, 164, 164, 39);
 		panelOpcaoLateral.add(botaoMenuAND);
 		
 		JButton botaoMenuOR = new JButton("OR");
@@ -120,7 +115,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoMenuOR.setForeground(Color.BLACK);
 		botaoMenuOR.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuOR.setBackground(SystemColor.scrollbar);
-		botaoMenuOR.setBounds(30, 294, 164, 39);
+		botaoMenuOR.setBounds(30, 203, 164, 39);
 		panelOpcaoLateral.add(botaoMenuOR);
 		
 		JButton botaoMenuXOR = new JButton("XOR");
@@ -139,7 +134,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoMenuXOR.setForeground(Color.BLACK);
 		botaoMenuXOR.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuXOR.setBackground(SystemColor.scrollbar);
-		botaoMenuXOR.setBounds(30, 333, 164, 39);
+		botaoMenuXOR.setBounds(30, 242, 164, 39);
 		panelOpcaoLateral.add(botaoMenuXOR);
 		
 		JButton botaoMenuFiltros = new JButton("Filtros");
@@ -158,7 +153,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoMenuFiltros.setForeground(Color.BLACK);
 		botaoMenuFiltros.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuFiltros.setBackground(SystemColor.scrollbar);
-		botaoMenuFiltros.setBounds(10, 372, 184, 39);
+		botaoMenuFiltros.setBounds(10, 281, 184, 39);
 		panelOpcaoLateral.add(botaoMenuFiltros);
 		
 		JButton botaoOperadores = new JButton("Operadores");
@@ -177,7 +172,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoOperadores.setForeground(Color.BLACK);
 		botaoOperadores.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoOperadores.setBackground(SystemColor.scrollbar);
-		botaoOperadores.setBounds(10, 140, 184, 39);
+		botaoOperadores.setBounds(10, 49, 184, 39);
 		panelOpcaoLateral.add(botaoOperadores);
 		
 		JButton botaoMenuHistograma = new JButton("Histograma");
@@ -196,7 +191,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoMenuHistograma.setForeground(Color.BLACK);
 		botaoMenuHistograma.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuHistograma.setBackground(SystemColor.scrollbar);
-		botaoMenuHistograma.setBounds(10, 410, 184, 39);
+		botaoMenuHistograma.setBounds(10, 319, 184, 39);
 		panelOpcaoLateral.add(botaoMenuHistograma);
 		
 		JButton botaoOperadoresLogicos = new JButton("Lógicos");
@@ -215,7 +210,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoOperadoresLogicos.setForeground(Color.BLACK);
 		botaoOperadoresLogicos.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoOperadoresLogicos.setBackground(SystemColor.scrollbar);
-		botaoOperadoresLogicos.setBounds(20, 217, 174, 39);
+		botaoOperadoresLogicos.setBounds(20, 126, 174, 39);
 		panelOpcaoLateral.add(botaoOperadoresLogicos);
 		
 		JButton botaoMenuGatoDeArnold = new JButton("Gato de Arnold");
@@ -232,7 +227,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoMenuGatoDeArnold.setForeground(Color.BLACK);
 		botaoMenuGatoDeArnold.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuGatoDeArnold.setBackground(SystemColor.scrollbar);
-		botaoMenuGatoDeArnold.setBounds(10, 448, 184, 39);
+		botaoMenuGatoDeArnold.setBounds(10, 357, 184, 39);
 		panelOpcaoLateral.add(botaoMenuGatoDeArnold);
 
 		JButton botaoMenuTransformacao = new JButton("Transforma\u00E7\u00E3o");
@@ -249,7 +244,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoMenuTransformacao.setForeground(Color.BLACK);
 		botaoMenuTransformacao.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuTransformacao.setBackground(SystemColor.scrollbar);
-		botaoMenuTransformacao.setBounds(10, 486, 184, 39);
+		botaoMenuTransformacao.setBounds(10, 395, 184, 39);
 		panelOpcaoLateral.add(botaoMenuTransformacao);
 		
 		JButton botaoMenuEqualizacao = new JButton("Equaliza\u00E7\u00E3o da imagem");
@@ -266,7 +261,7 @@ public class TelaOperadorLogicoAND extends JPanel {
 		botaoMenuEqualizacao.setForeground(Color.BLACK);
 		botaoMenuEqualizacao.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 14));
 		botaoMenuEqualizacao.setBackground(SystemColor.scrollbar);
-		botaoMenuEqualizacao.setBounds(10, 524, 184, 39);
+		botaoMenuEqualizacao.setBounds(10, 433, 184, 39);
 		panelOpcaoLateral.add(botaoMenuEqualizacao);
 		
 
@@ -395,8 +390,8 @@ public class TelaOperadorLogicoAND extends JPanel {
 		//INICIO PANEL SUPERIOR
 		
 		JPanel panelSuperior = new JPanel();
-		panelSuperior.setBackground(SystemColor.windowBorder);
-		panelSuperior.setBounds(194, 0, 830, 102);
+		panelSuperior.setBackground(new Color(0, 51, 204));
+		panelSuperior.setBounds(0, 0, 1024, 102);
 		add(panelSuperior);
 		panelSuperior.setLayout(null);
 		

@@ -1,4 +1,4 @@
-package algoritmos;
+package algoritmosDeProcessamentoDeImagens;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -10,14 +10,14 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-public class Panel_OperadorAritmetico_Adicao extends JPanel {
+public class Panel_OperadorLogico_AND extends JPanel {
 
-	public BufferedImage imagemAdicao;
+	public BufferedImage imagemAND;
 	
 	/**
 	 * Create the panel.
 	 */
-	public Panel_OperadorAritmetico_Adicao() {
+	public Panel_OperadorLogico_AND() {
 		
 		setBorder(new LineBorder(new Color(0, 0, 0)));
 		setBounds(new Rectangle(0, 0, 250, 250));
@@ -58,20 +58,20 @@ public class Panel_OperadorAritmetico_Adicao extends JPanel {
         }
         
         int matrizImagem[][] = new int[altura][largura];       
-        imagemAdicao = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
+        imagemAND = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
-        		//operacao de adicao
-        		matrizImagem[i][j] = matrizDaImagem1[i][j] + matrizDaImagem2[i][j];
+        		//operacao de AND
+        		matrizImagem[i][j] = (matrizDaImagem1[i][j] & matrizDaImagem2[i][j]);
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
         		if(matrizImagem[i][j] > 255){
         			matrizImagem[i][j] = 255;
         		}
         		
-        		imagemAdicao.setRGB(j, i, corPixel(matrizImagem[i][j]));
+        		imagemAND.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
@@ -86,7 +86,7 @@ public class Panel_OperadorAritmetico_Adicao extends JPanel {
 	protected void paintComponent(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paintComponent(g);
-		g.drawImage(imagemAdicao, 0, 0, null);
+		g.drawImage(imagemAND, 0, 0, null);
 	}
 
 }
