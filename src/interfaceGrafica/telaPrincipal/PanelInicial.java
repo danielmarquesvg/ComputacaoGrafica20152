@@ -9,6 +9,8 @@ import javax.swing.JTextPane;
 
 import com.uepb.view.TelaPrincipal;
 
+import grafico.Graficos;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -94,6 +96,23 @@ public class PanelInicial extends JPanel {
 		textPaneProcessamentoDeImagens.setBackground(new Color(0, 153, 153));
 		textPaneProcessamentoDeImagens.setBounds(305, 311, 318, 146);
 		add(textPaneProcessamentoDeImagens);
+		
+		JButton btnGrficos = new JButton("Gr\u00E1ficos");
+		btnGrficos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				TelaInicial.frame.setVisible(false);
+				
+				Graficos tela = new Graficos();
+				tela.setVisible(true);
+				
+			}
+		});
+		btnGrficos.setForeground(Color.WHITE);
+		btnGrficos.setFont(new Font("Segoe UI Semibold", Font.BOLD, 18));
+		btnGrficos.setBackground(new Color(0, 102, 102));
+		btnGrficos.setBounds(633, 482, 276, 148);
+		add(btnGrficos);
 		
 		
 
