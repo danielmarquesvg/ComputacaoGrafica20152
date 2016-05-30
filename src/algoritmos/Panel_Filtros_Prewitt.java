@@ -48,6 +48,7 @@ public class Panel_Filtros_Prewitt extends JPanel {
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
+        		//aproximacoes em X e Y
         		int aproximacaoX = 0;
         		int aproximacaoY = 0;
 
@@ -86,7 +87,8 @@ public class Panel_Filtros_Prewitt extends JPanel {
         		if ((i - 1) >= 0){
         			aproximacaoY -= matrizDaImagem1[i - 1][j];
         		}
-
+        		
+        		//modulo da soma das aproximações em X e Y
         		int mag = Math.abs(aproximacaoX) + Math.abs(aproximacaoY);
         		
         		matrizImagem[i][j] = mag;

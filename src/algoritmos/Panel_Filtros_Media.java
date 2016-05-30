@@ -44,6 +44,7 @@ public class Panel_Filtros_Media extends JPanel {
         int matrizImagem[][] = new int[altura][largura];       
         imagemMedia = new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB);
         
+        //somando os valores dos pixels da matriz para determinar o coeficiente de normalização
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
@@ -54,8 +55,10 @@ public class Panel_Filtros_Media extends JPanel {
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
+        		//soma dos pixeis da vizinhança
         		int soma = 0;
-
+        		
+        		//obs: os IFs são o tratamento de exceção para o limite das bordas da matriz
         		soma += matrizDaImagem1[i][j];
         		if ((i - 1) >= 0) {
         			soma += matrizDaImagem1[i - 1][j] / CoeficienteDeNormalizacao;
@@ -82,6 +85,7 @@ public class Panel_Filtros_Media extends JPanel {
         			soma += matrizDaImagem1[i + 1][j + 1] / CoeficienteDeNormalizacao;
         		}
         		
+        		//adiciona a soma dos valores RGB da vizinhança na posição central
         		matrizImagem[i][j] = Math.round(soma);
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
@@ -89,6 +93,7 @@ public class Panel_Filtros_Media extends JPanel {
         			matrizImagem[i][j] = 255;
         		}
         		
+        		//adiciona o valor do RGB do pixel central no buffered image
         		imagemMedia.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}

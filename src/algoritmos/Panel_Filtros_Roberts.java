@@ -48,6 +48,7 @@ public class Panel_Filtros_Roberts extends JPanel {
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
+        		//Aproximações em X e Y
         		int aproximacaoX = 0;
         		int aproximacaoY = 0;
 
@@ -62,9 +63,11 @@ public class Panel_Filtros_Roberts extends JPanel {
         		}else {
         			aproximacaoX = matrizDaImagem1[i][j];
         		}
-
+        		
+        		//Modulo da soma das Aproximações
         		int mag = Math.abs(aproximacaoX) + Math.abs(aproximacaoY);
         		
+        		//Adiciona o novo valor na matriz
         		matrizImagem[i][j] = mag;
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
@@ -77,6 +80,7 @@ public class Panel_Filtros_Roberts extends JPanel {
         			matrizImagem[i][j] = 0;
         		}
         		
+        		//coloca o valor do pixel no buffered image
         		imagemRoberts.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}

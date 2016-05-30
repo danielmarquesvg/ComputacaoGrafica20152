@@ -48,6 +48,7 @@ public class Panel_Filtros_Mediana extends JPanel {
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
+        		//criação de um array para armazenar os valores dos pixels da vizinhança
         		int[] array = new int[9];
     		    
         		array[0] += matrizDaImagem1[i][j];
@@ -76,8 +77,10 @@ public class Panel_Filtros_Mediana extends JPanel {
         			array[8] += matrizDaImagem1[i + 1][j + 1];
         		}
         		
+        		//ordenando o array
         		quicksort(array, 0, 8);
         		
+        		//pegando o pixel da posição mediana no array
         		matrizImagem[i][j] = array[4];
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)
@@ -85,12 +88,14 @@ public class Panel_Filtros_Mediana extends JPanel {
         			matrizImagem[i][j] = 255;
         		}
         		
+        		//adicionando o valor do pixel no buffered image
         		imagemMediana.setRGB(j, i, corPixel(matrizImagem[i][j]));
         		repaint();
         	}
         } 
     }
 	
+	//método de ordenação - quicksort
 	private static void quicksort(int[] vetor, int ini, int fim) {
 		int j;
 		if (ini < fim) {
@@ -100,6 +105,7 @@ public class Panel_Filtros_Mediana extends JPanel {
 		}// if
 	}
 	
+	//parte do quick sort
 	private static int separaVetor(int[] vetor, int ini, int fim) {
 		int aux, c = vetor[ini], i = ini + 1, j = fim;
 		while (i <= j) {

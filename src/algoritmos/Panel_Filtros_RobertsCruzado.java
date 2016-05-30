@@ -48,6 +48,7 @@ public class Panel_Filtros_RobertsCruzado extends JPanel {
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
+        		//Aproximacoes em X e Y
         		int aproximacaoX = 0;
         		int aproximacaoY = 0;
 
@@ -64,8 +65,10 @@ public class Panel_Filtros_RobertsCruzado extends JPanel {
         			aproximacaoX += - matrizDaImagem1[i][j + 1];
         		}
         		
+        		//Modulo da soma das Aproximações
         		int mag = Math.abs(aproximacaoY) + Math.abs(aproximacaoX);
         		
+        		//Adicionando o valor do pixel na matriz
         		matrizImagem[i][j] = mag;
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)

@@ -47,9 +47,13 @@ public class Panel_Filtros_PassaAlta extends JPanel {
         for(int i = 0; i<altura; i++){
         	for(int j=0;j<largura;j++){
         		
+        		//variavel para salvar a soma dos pixels da vizinhança
         		int soma = 0;
-
+        		
+        		//pixel central: multiplica por 8
         		soma += 8*matrizDaImagem1[i][j];
+        		
+        		//para os demais pixels, multiplica por -1
         		if ((i - 1) >= 0) {
         			soma += -1*matrizDaImagem1[i - 1][j];
         		}
@@ -74,6 +78,8 @@ public class Panel_Filtros_PassaAlta extends JPanel {
         		if (((i + 1) < largura) && ((j + 1) < altura)) {
         			soma += -1*matrizDaImagem1[i + 1][j + 1];
         		}
+        		
+        		//na posição atual, faz a soma e divide por 9, o resultado é inserido na posição [i][j]
         		matrizImagem[i][j] = (int)(soma/9);
         		
         		//verificacao do valor do pixel caso o mesmo ultrapasse o valor de 255 (valor maximo)

@@ -66,14 +66,17 @@ public class GraficoHistogramaMatriz extends JPanel {
 			
 		}
         
+        //instanciando um buffered image
         setImagemOriginal(new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB));
         
+        //colocando todos os pixels do buffered image na core branca
         for (int i = 0; i < altura; i++) {
 			for (int j = 0; j < largura; j++) {
 				getImagemOriginal().setRGB(i, j, Color.WHITE.getRGB());
 			}
 		}
         
+      //procurando o o valor RGB com maior frequencia entre 0 e 255
         int maior = 0;
         for (int i = 0; i < freq.length; i++) {
 			if (maior < freq[i]) {
@@ -81,7 +84,7 @@ public class GraficoHistogramaMatriz extends JPanel {
 			}
 		}
         
-        
+      //plotando as frequencias dos valores RGB na vertical
         for (int i = 0; i < largura-1; i++) {
         	int funcao = (100*freq[i])/maior;
 			for (int j = 0; j < funcao; j++) {

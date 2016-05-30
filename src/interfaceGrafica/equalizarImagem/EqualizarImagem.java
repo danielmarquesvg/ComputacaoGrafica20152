@@ -32,34 +32,9 @@ public class EqualizarImagem {//Classe da equalização de imagens
 				matrizDeEqualizacao[matrizDaImagemOriginal[i][j]][2] = matrizDaImagemOriginal[i][j] / 255;
 			}
 		}
-		/*
-		for (int i = 0; i < matrizDaImagemOriginal.length; i++) {
-			for (int j = 0; j < matrizDaImagemOriginal.length; j++) {
-				System.out.print(matrizDaImagemOriginal[i][j]+" ");
-			}
-			System.out.println();
-		}
 		
-		System.out.println("\n");
 		
-		for (int i = 0; i < matrizDeEqualizacao.length; i++) {
-			System.out.println("Nível de Cinza = "+matrizDeEqualizacao[i][0]);
-			System.out.println("Frequência do Nível de Cinza = "+matrizDeEqualizacao[i][1]);
-			System.out.println("Valor de rk: "+matrizDeEqualizacao[i][2]);
-			System.out.println();
-		}
-		
-		System.out.println("\n");
-		*/
 		matrizDeEqualizacao = ordenarMatriz(matrizDeEqualizacao);
-		/*
-		for (int i = 0; i < matrizDeEqualizacao.length; i++) {
-			System.out.println("Nível de Cinza = "+matrizDeEqualizacao[i][0]);
-			System.out.println("Frequência do Nível de Cinza = "+matrizDeEqualizacao[i][1]);
-			System.out.println("Valor de rk: "+matrizDeEqualizacao[i][2]);
-			System.out.println();
-		}
-		*/
 		
 		//calculando Pr(rk)
 		int contador = 0;
@@ -127,15 +102,6 @@ public class EqualizarImagem {//Classe da equalização de imagens
 			}
 			
 		}
-		/*
-		//printando a matriz resultado (matriz equalizada)
-		for (int i = 0; i < matrizResultado.length; i++) {
-			for (int j = 0; j < matrizResultado.length; j++) {
-				System.out.print(matrizResultado[i][j]+" ");
-			}
-			System.out.println();
-		}
-		*/
 
 		return matrizResultado;
 	}

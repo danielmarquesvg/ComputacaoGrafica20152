@@ -32,7 +32,9 @@ public class GraficoHistograma extends JPanel {
 	
 	public void colocaImagemNoPainel(String caminhoDaImagem){
 		try {
+			//gerando um buffered image da imagem pesquisada no sistema
 			imagem = new BufferedReader(new FileReader(caminhoDaImagem));
+			
 			geraImagem();
 			
 		} catch (IOException e) {
@@ -45,7 +47,8 @@ public class GraficoHistograma extends JPanel {
 	
 	public void geraImagem() throws Exception{
 		
-		String type = imagem.readLine();//Ler a primeira linha da mensagem e ignora a descricao do tipo da imagem
+		//Ler a primeira linha da mensagem e ignora a descricao do tipo da imagem
+		String type = imagem.readLine();
 		
 		if (type == null || !type.equals(P2)) {
             throw new Exception("Formato invalido - Tipo P2 requerido");
@@ -85,14 +88,17 @@ public class GraficoHistograma extends JPanel {
         	linha=imagem.readLine();
         }
         
+        //instanciação do buffered image
         setImagemOriginal(new BufferedImage(altura, largura, BufferedImage.TYPE_INT_RGB));
         
+        //colocando todos do buffered image na cor branca
         for (int i = 0; i < altura; i++) {
 			for (int j = 0; j < largura; j++) {
 				getImagemOriginal().setRGB(i, j, Color.WHITE.getRGB());
 			}
 		}
         
+        //procurando o o valor RGB com maior frequencia entre 0 e 255
         int maior = 0;
         for (int i = 0; i < freq.length; i++) {
 			if (maior < freq[i]) {
@@ -100,7 +106,7 @@ public class GraficoHistograma extends JPanel {
 			}
 		}
         
-        
+        //plotando as frequencias dos valores RGB na vertical
         for (int i = 0; i < largura-1; i++) {
         	int funcao = (100*freq[i])/maior;
 			for (int j = 0; j < funcao; j++) {
